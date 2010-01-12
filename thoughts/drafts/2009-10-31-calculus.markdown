@@ -1,0 +1,7 @@
+---
+layout: article
+title: Design Calculus
+author: Doug
+---
+
+Thought experiment on how to to design calculus.

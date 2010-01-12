@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<style type="text/css">
+</style>
+{{ content }}
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/js/key_handler.js"></script>
+<script type="text/javascript" src="/js/mouse_handler.js"></script>
+<script type="text/javascript" src="/js/quicksilver.js"></script>
+<script type="text/javascript" src="/js/live_search.js"></script>
+<script type="text/javascript" src="/js/nav.js"></script>
+<script type="text/javascript">
+	var myFluidGrid = {
+		COLNUMBER : 2, // Minimum column number.
+		COLMARGIN : 10, // Margin (in pixel) between columns/boxes.
+		COLWIDTH : 255, // Fixed width of all columns.
+		TOPOFFSET : 40,
+		EXTRA : 30,
+		doLayout : function() {
+			var self = this;
+			var pointer = 0;
+			var arr = [];
+			var columns = Math.max(this.COLNUMBER, parseInt($('body').innerWidth() / (this.COLWIDTH + this.COLMARGIN)));
+
+			$('.box').css('position', 'absolute').css('width', this.COLWIDTH  + 'px');
+			$('.box').each(function() {
+				var tempLeft = (pointer * (self.COLWIDTH + self.COLMARGIN));
+				$(this).css('left', (tempLeft + self.COLMARGIN) + 'px');
+
+				var tempTop = 0;
+				if (arr[pointer]) { tempTop = arr[pointer]; }
+				$(this).css('top', (tempTop + self.TOPOFFSET + self.COLMARGIN) + 'px');
+
+				arr[pointer] = tempTop + $(this).outerHeight() + self.COLMARGIN;
+				pointer++;
+				if (pointer === columns) { pointer = 0; }
+			});
+		}
+	};
+	$().ready(function() {
+		$(".box").click(function() {
+			window.location.href = $(this).find('a').attr('href');	
+		});
+		myFluidGrid.doLayout();
+		setTimeout(function() {
+			myFluidGrid.doLayout();
+		},200);
+	});
+	$(window).resize(function() {
+		myFluidGrid.doLayout();
+	});
+</script>

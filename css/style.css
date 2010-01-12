@@ -1,0 +1,152 @@
+body {
+    font-family: Segoe UI, Candara, Bitstream Vera Sans, DejaVu Sans, Trebuchet MS, Verdana;
+    font-size: 100%;
+    background-color: #FDFDFD;
+	position: relative;
+	width: 100%;
+}
+
+
+img {
+    margin-bottom: 3px;
+	outline: 1px solid #a9a9a9;
+	padding: 3px;
+	position: relative;
+	vertical-align: bottom;
+}
+
+.byline { 
+    margin-top: -1em;
+    font-style: italic;
+    font-size: 80%;
+}
+
+a {
+    text-decoration: none;
+    color: #555;
+    text-decoration: underline;
+}
+
+.title a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*#footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 80%;
+    text-align: center;
+}*/
+
+#content {
+    min-height: 400px;
+}
+
+#wrapper {
+    padding: 3em 0;
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+ul .title {
+    font-size: 1.8em;
+    font-size: 120%;
+    font-weight: bold;
+    line-height: 1.6em;
+}
+
+ul .author {
+    font-style: italic;
+}
+
+h1, h1.title {
+    font-size: 200%;
+}
+
+.title, #goal, h1 {
+/*    font-variant: small-caps;*/
+}
+
+.box {
+	background-color: #F0F0F0;
+	margin: 0;
+	padding: 0;
+    background-color: #FDFDFD;
+    background-color: #F0EDEA;
+}
+.box .title, .box .pubdate {
+	font-size: 130%;
+	font-weight: bold;
+}
+.box .title {
+	line-height: 80%;    
+}
+.box .pubdate {
+	font-size: 80%;
+	font-weight: normal;
+	font-style: italic;
+}
+.box .inner {
+    padding: 10px;
+}
+.box .description {
+    font-size: 95%;
+    line-height: 110%;
+}
+.box:hover {
+    background-color: #D3D0CD;
+    cursor: pointer;
+}
+div.alt {
+	background-color: #CCC;
+}
+#header, #footer {
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    color: #FFF;
+    background: #333;
+    z-index: 100;
+}
+#header {
+    top: 0px;
+}
+#header, .title {
+    font-variant: small-caps;
+}
+#footer {
+    bottom: 0px;
+    font-size: 70%;
+}
+#header ul, #search_container {
+    padding: 7px;    
+}
+#header ul {
+    float: left;
+}
+#header ul li, #footer ul li {
+    padding: 0 10px;
+    float: left;
+}
+#header a {
+    color: #FFF;
+    text-decoration: none;
+}
+#header a:hover {
+    text-decoration: overline;
+}
+#search_container {
+    float: right;
+    display: none;
+}
+#search_container form {
+    display: inline;
+}

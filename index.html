@@ -1,11 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-</head>
-<body>
-	test
-</body>
-</html>
+---
+layout: grid
+title: Fluid Interfaces
+---
+<div id="projects" class="group span-24 last">
+	<div class="items">
+		{% for post in site.categories.projects %}
+			<div class="item box">
+				<div class="inner">
+					<div>
+						<div class="title index"><a href="{{ post.url }}">{{ post.title }}</a></div>
+						<div class="pubdate">{{ post.date | date_to_string }}</div>
+						<div class="hide index">{{ post.author }}</div>
+					</div>
+					{% if post.teaser %}
+					<div class="image">
+						<a href="{{ post.url }}"><img class="span-8" src="{{ post.teaser }}"></a>
+					</div>
+					{% endif %}
+					{% if post.description %}
+					<div class="description">
+						{{ post.description }}
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

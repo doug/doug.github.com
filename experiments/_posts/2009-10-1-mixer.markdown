@@ -1,0 +1,83 @@
+---
+layout: article
+title: Color Mixing
+author: Doug
+description: 'This week I have been experimenting with color mixing of different channels.'
+---
+
+{{page.description}}
+
+### **Starting Image 1**
+![Starting Image 1](/experiments/mixer/scotch1.jpg "Starting Image 1")
+### **Starting Image 2**
+![Starting Image 2](/experiments/mixer/scotch2.jpg "Starting Image 2")  
+### **Final Image**
+![Final Image](/experiments/mixer/final.png "Final Image")  
+
+### **Applet**
+
+Application to mix the channels of colors.
+Press '1' or '2' to select image 1 or 2.
+Press 'r', 'g', 'b' to select the red, green, or blue channel.
+Then click on the image, you can hold down and drag to adjust the 
+amount of that color channel to use from the selected image. This value 
+is taken as a scaled 0 to 1 value correlating to the mouse position on the x axis.
+
+<div id="channel_mixing_container">		
+<!--[if !IE]> -->
+	<object classid="java:channel_mixing.class" 
+      			type="application/x-java-applet"
+      			archive="/experiments/mixer/channel_mixing.jar"
+      			width="372" height="640"
+      			standby="Loading Processing software..." >
+      			
+		<param name="archive" value="/experiments/mixer/channel_mixing.jar" />
+	
+		<param name="mayscript" value="true" />
+		<param name="scriptable" value="true" />
+	
+		<param name="image" value="/experiments/mixer/loading.gif" />
+		<param name="boxmessage" value="Loading Processing software..." />
+		<param name="boxbgcolor" value="#FFFFFF" />
+	
+		<param name="test_string" value="outer" />
+<!--<![endif]-->
+	
+	<object classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" 
+			codebase="http://java.sun.com/update/1.5.0/jinstall-1_5_0_15-windows-i586.cab"
+			width="372" height="640"
+			standby="Loading Processing software..."  >
+			
+		<param name="code" value="channel_mixing" />
+		<param name="archive" value="/experiments/mixer/channel_mixing.jar" />
+		
+		<param name="mayscript" value="true" />
+		<param name="scriptable" value="true" />
+		
+		<param name="image" value="/experiments/mixer/loading.gif" />
+		<param name="boxmessage" value="Loading Processing software..." />
+		<param name="boxbgcolor" value="#FFFFFF" />
+		
+		<param name="test_string" value="inner" />
+		
+		<p>
+			<strong>
+				This browser does not have a Java Plug-in.
+				<br />
+				<a href="http://java.sun.com/products/plugin/downloads/index.html" title="Download Java Plug-in">
+					Get the latest Java Plug-in here.
+				</a>
+			</strong>
+		</p>
+	
+	</object>
+	
+<!--[if !IE]> -->
+	</object>
+<!--<![endif]-->
+
+</div>
+
+
+
+	
