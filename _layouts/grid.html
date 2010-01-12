@@ -18,13 +18,14 @@ layout: default
 		COLNUMBER : 2, // Minimum column number.
 		COLMARGIN : 10, // Margin (in pixel) between columns/boxes.
 		COLWIDTH : 255, // Fixed width of all columns.
-		TOPOFFSET : 40,
 		EXTRA : 30,
 		doLayout : function() {
 			var self = this;
 			var pointer = 0;
 			var arr = [];
+			var headerheight = $('#header').outerHeight();
 			var columns = Math.max(this.COLNUMBER, parseInt($('body').innerWidth() / (this.COLWIDTH + this.COLMARGIN)));
+			console.log(headerheight+"px");
 
 			$('.box').css('position', 'absolute').css('width', this.COLWIDTH  + 'px');
 			$('.box').each(function() {
@@ -33,7 +34,7 @@ layout: default
 
 				var tempTop = 0;
 				if (arr[pointer]) { tempTop = arr[pointer]; }
-				$(this).css('top', (tempTop + self.TOPOFFSET + self.COLMARGIN) + 'px');
+				$(this).css('top', (tempTop + headerheight + self.COLMARGIN) + 'px');
 
 				arr[pointer] = tempTop + $(this).outerHeight() + self.COLMARGIN;
 				pointer++;

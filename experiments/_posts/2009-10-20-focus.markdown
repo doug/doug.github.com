@@ -2,6 +2,7 @@
 layout: article
 title: Dynamic Focusing
 author: Doug
+categories: [experiments]
 description: 'Dynamically adjusting the focus of an image by mixing images taken at different angles.'
 ---
 

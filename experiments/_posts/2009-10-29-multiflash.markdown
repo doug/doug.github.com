@@ -2,7 +2,7 @@
 layout: article
 title: Multi-Flash Edge Detection
 author: Doug
-description: 'This week I have been experimenting using multi-flash techniques to do edge sensing.'
+description: 'Experimenting using multi-flash techniques to do edge sensing.'
 ---
 
 {{ page.description }}

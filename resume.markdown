@@ -1,3 +1,8 @@
+---
+layout: blueprint
+title: Resume
+---
+
 ## *Goal: Extend human capability through augmentation of how we interface with the world.* ##
 
 
@@ -22,7 +27,7 @@ Art: Painting to bronze to lithography to video to performance to algorithmic an
 ### *Experience* ###
 **2008 MIT Media Lab** Graduate student and Research Assistant at the MIT Media lab under Pattie Maes in the Ambient Intelligence Group.  
 **2007 Yahoo! Design Innovation Group ("yHaus")** Full time employee under Joy Mountford with Ben Clemens as my manager, work is generally self-directed data visualization/exploration or new interface design.  
-	As an overview some projects I am working on include Clustering Interface, LDA Topic Modeling and Mail Social Graph, Face of News, Core Animation Experiments, and Multi-touch zoomable interface designs.  
+As an overview some projects I am working on include Clustering Interface, LDA Topic Modeling and Mail Social Graph, Face of News, Core Animation Experiments, and Multi-touch zoomable interface designs.  
 **2007 Transit Art Show Japan** Displaying large computer-vision based photographic work in Tokyo & Kyoto.  
 **2007 Genetics and Biological Lab** Courses through Berkeley Extension School  
 **2007 Information Visualization** Critical project course on methods and practices in information visualization.  Co-taught by Ben Fry and Golan Levin.  

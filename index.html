@@ -13,6 +13,7 @@ categories: [projects]
 					<div class="title index"><a href="{{ post.url }}">{{ post.title }}</a></div>
 					<div class="pubdate">{{ post.date | date_to_string }}</div>
 					<div class="hide index">{{ post.author }}</div>
+					<div class="hide index">{{ post.categories }}</div>
 				</div>
 				{% if post.teaser %}
 				<div class="image">
