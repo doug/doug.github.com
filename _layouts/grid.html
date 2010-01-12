@@ -2,7 +2,11 @@
 layout: default
 ---
 
-{{ content }}
+<div id="wrapper" class="container">
+  <div id="content" class="span-9 prepend-1">
+	{{ content }}
+  </div>
+</div>
 <script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
 <script type="text/javascript" src="/js/key_handler.js"></script>
 <script type="text/javascript" src="/js/mouse_handler.js"></script>
@@ -38,9 +42,6 @@ layout: default
 		}
 	};
 	$().ready(function() {
-		$(".box").click(function() {
-			window.location.href = $(this).find('a').attr('href');	
-		});
 		myFluidGrid.doLayout();
 		setTimeout(function() {
 			myFluidGrid.doLayout();
