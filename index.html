@@ -1,10 +1,13 @@
 ---
 layout: grid
 title: Fluid Interfaces
+categories: [projects]
 ---
-<div id="projects" class="group span-24 last">
+<div class="span-24 last">
 	<div class="items">
-		{% for post in site.categories.projects %}
+		{% for post in site.posts %}
+			{% for cat in page.categories %}
+			{% if post.categories contains cat %}
 			<div class="item box">
 				<div class="inner">
 					<div>
@@ -24,6 +27,8 @@ title: Fluid Interfaces
 					{% endif %}
 				</div>
 			</div>
+			{% endif %}
+			{% endfor %}
 		{% endfor %}
 	</div>
 </div>

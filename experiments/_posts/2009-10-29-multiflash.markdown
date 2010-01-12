@@ -16,7 +16,7 @@ I decided I wanted a bit of a challenge and the code was already written to do s
 
 Also as an additional constraint I wanted to see if I could write software to do this entire thing including the lighting so that someone with just a laptop and it's built in camera can do this at home. As such the program also draws light on the screen to use as the colored light from different angles.  The light wasn't really bright enough to do this purely with the shadows, so I had to deviate a bit from the original goal, but that is generally when the fun stuff happens anyway.
 ### See setup image below.
-![setup](/experiments/multiflash/setup.JPG "setup")
+![setup](/experiments/multiflash/setup.jpg "setup")
 
 Then just use those different colored shadows to extract out the edges in the image.
 

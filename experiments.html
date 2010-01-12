@@ -1,16 +1,18 @@
 ---
 layout: grid
 title: Experiments
+categories: [experiments]
 ---
-<div id="experiments" class="span-24 last">
+<div class="span-24 last">
 	<div class="items">
-		{% for post in site.categories.experiments %}
+		{% for post in site.posts %}
+			{% for cat in page.categories %}
+			{% if post.categories contains cat %}
 			<div class="item box">
 				<div class="inner">
 					<div>
-						{{ post.cat }}
 						<div class="title index"><a href="{{ post.url }}">{{ post.title }}</a></div>
-						<div class="pubdate">{{ post.date | date_to_string }}</div> 
+						<div class="pubdate">{{ post.date | date_to_string }}</div>
 						<div class="hide index">{{ post.author }}</div>
 					</div>
 					{% if post.teaser %}
@@ -25,6 +27,9 @@ title: Experiments
 					{% endif %}
 				</div>
 			</div>
+			{% endif %}
+			{% endfor %}
 		{% endfor %}
 	</div>
 </div>
+
