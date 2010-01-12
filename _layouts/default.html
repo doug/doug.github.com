@@ -31,18 +31,6 @@
 			<li>
 				<a href="/about">About</a>
 			</li>
-			{% if site.related_posts %}
-			<li>
-				| Similar to: 
-			</li>
-			{% for post in site.related_posts %}
-			{% if post.id != page.id %}
-			<li>
-				<a href="{{ post.url }}">{{ post.title }}</a>
-			</li>
-			{% endif %}
-			{% endfor %}
-			{% endif %}
 		</ul>
 		<span id="search_container">
 			<form id="search_form" type="GET">
@@ -52,6 +40,19 @@
 	</div>
 	<div id="footer">
 		<ul>
+			{% if site.related_posts %}
+			<li>
+				Similar to: 
+			</li>
+			{% for post in site.related_posts limit:5 %}
+			{% if post.id != page.id %}
+			<li>
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			</li>
+			{% endif %}
+			{% endfor %}
+			<li> | </li>
+			{% endif %}
 			<li>
 				Designed by Doug Fritz
 			</li>

@@ -1,8 +1,6 @@
-destination: ./_site
 auto:        true
 lsi:         true
 server:      true
-server_port: 4000
 pygments:    true
 markdown:    rdiscount
 permalink:   pretty

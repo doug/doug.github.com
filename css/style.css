@@ -35,12 +35,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/*#footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 80%;
-    text-align: center;
-}*/
 
 #content {
     min-height: 400px;
@@ -125,6 +119,7 @@ div.alt {
 #footer {
     bottom: 0px;
     font-size: 70%;
+    padding: 5px 0;
 }
 #header ul, #search_container {
     padding: 7px;    
@@ -137,8 +132,10 @@ div.alt {
     float: left;
 }
 #header a {
-    color: #FFF;
     text-decoration: none;
+}
+#footer a, #header a {
+    color: #FFF;
 }
 #header a:hover {
     text-decoration: overline;
