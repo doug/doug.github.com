@@ -74,7 +74,7 @@ This applet may take a few seconds to load please be patient.
 </p>
 
 <p>
-Source code: <a href="/applets/focus.pde">focus</a> 
+Source code: <a href="/experiments/focus/focus.pde">focus</a> 
 </p>
 
 <p>
@@ -92,16 +92,16 @@ And this applet may take a few seconds to load please be patient.
 <!--[if !IE]> -->
 	<object classid="java:focusonly.class" 
 			type="application/x-java-applet"
-			archive="/applets/focusonly.jar"
+			archive="/experiments/focus/focusonly.jar"
 			width="400" height="400"
 			standby="Loading Processing software..." >
 			
-		<param name="archive" value="/applets/focusonly.jar" />
+		<param name="archive" value="/experiments/focus/focusonly.jar" />
 	
 		<param name="mayscript" value="true" />
 		<param name="scriptable" value="true" />
 	
-		<param name="image" value="/applets/loading.gif" />
+		<param name="image" value="/experiments/focus/loading.gif" />
 		<param name="boxmessage" value="Loading Processing software..." />
 		<param name="boxbgcolor" value="#FFFFFF" />
 	
@@ -114,12 +114,12 @@ And this applet may take a few seconds to load please be patient.
 			standby="Loading Processing software..."  >
 			
 		<param name="code" value="focusonly" />
-		<param name="archive" value="/applets/focusonly.jar" />
+		<param name="archive" value="/experiments/focus/focusonly.jar" />
 		
 		<param name="mayscript" value="true" />
 		<param name="scriptable" value="true" />
 		
-		<param name="image" value="/applets/loading.gif" />
+		<param name="image" value="/experiments/focus/loading.gif" />
 		<param name="boxmessage" value="Loading Processing software..." />
 		<param name="boxbgcolor" value="#FFFFFF" />
 		
@@ -148,7 +148,7 @@ And this applet may take a few seconds to load please be patient.
 </p>
 
 <p>
-Source code: <a href="/applets/focusonly.pde">focusonly</a> 
+Source code: <a href="/experiments/focus/focusonly.pde">focusonly</a> 
 </p>
 
 <p>
