@@ -135,11 +135,15 @@ div.alt {
     text-decoration: none;
 }
 #footer a, #header a {
+    color: #DDD;
+}
+#header a:hover, #footer a:hover {
     color: #FFF;
 }
 #header a:hover {
     text-decoration: overline;
 }
+
 #search_container {
     float: right;
     display: none;

@@ -25,7 +25,7 @@ Operating Systems: MacOS X, Linux, UNIX, Windows
 Art: Painting to bronze to lithography to video to performance to algorithmic and anything in between.  
 
 ### *Experience* ###
-**2008 MIT Media Lab** Graduate student and Research Assistant at the MIT Media lab under Pattie Maes in the Ambient Intelligence Group.  
+**2008 MIT Media Lab** Graduate student and Research Assistant at the MIT Media lab under Pattie Maes in the Fluid Interfaces Group.  
 **2007 Yahoo! Design Innovation Group ("yHaus")** Full time employee under Joy Mountford with Ben Clemens as my manager, work is generally self-directed data visualization/exploration or new interface design.  
 As an overview some projects I am working on include Clustering Interface, LDA Topic Modeling and Mail Social Graph, Face of News, Core Animation Experiments, and Multi-touch zoomable interface designs.  
 **2007 Transit Art Show Japan** Displaying large computer-vision based photographic work in Tokyo & Kyoto.  
@@ -82,7 +82,6 @@ World Expo side exhibit in Nagoya Japan
 Print Exchange Show at Cornell University  
 GoGo Dancing Robots at Future Tenant Gallery  
 Artwork in permanent collection of Gerald R. Dodge Foundation  
-Multiple local self and group shows on Carnegie Mellon Campus  
 
 ### *Travel* ###
 Taiwan, Greece, Japan, Canada, Germany, Italy, Switzerland  
