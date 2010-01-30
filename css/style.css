@@ -6,14 +6,12 @@ body {
     width: 100%;
 }
 
-
 #content img {
     margin-bottom: 3px;
     outline: 1px solid #a9a9a9;
     padding: 3px;
     position: relative;
     vertical-align: bottom;
-    border: none;
 }
 
 .byline { 
