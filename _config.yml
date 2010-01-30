@@ -1,5 +1,5 @@
 auto:        true
-lsi:         true
+lsi:         false
 server:      true
 pygments:    true
 markdown:    rdiscount

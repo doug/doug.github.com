@@ -2,17 +2,18 @@ body {
     font-family: Constantia, Lucida Bright, LucidaBright, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia;
     font-size: 90%;
     background-color: #FDFDFD;
-	position: relative;
-	width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 
 #content img {
     margin-bottom: 3px;
-	outline: 1px solid #a9a9a9;
-	padding: 3px;
-	position: relative;
-	vertical-align: bottom;
+    outline: 1px solid #a9a9a9;
+    padding: 3px;
+    position: relative;
+    vertical-align: bottom;
+    border: none;
 }
 
 .byline { 
@@ -44,6 +45,9 @@ a:hover {
     padding: 4em 0;
 }
 
+#gridWrapper {
+    padding: 2em 0;
+}
 
 ul {
     list-style: none;
@@ -66,27 +70,27 @@ h1, h1.title {
 }
 
 .title, #goal, h1 {
-/*    font-variant: small-caps;*/
+/*    font-variant: small-caps; */
 }
 
 .box {
-	background-color: #F0F0F0;
-	margin: 0;
-	padding: 0;
+    background-color: #F0F0F0;
+    margin: 0;
+    padding: 0;
     background-color: #FDFDFD;
     background-color: #F0EDEA;
 }
 .box .title, .box .pubdate {
-	font-size: 130%;
-	font-weight: bold;
+    font-size: 130%;
+    font-weight: bold;
 }
 .box .title {
-	line-height: 80%;    
+    line-height: 80%;    
 }
 .box .pubdate {
-	font-size: 80%;
-	font-weight: normal;
-	font-style: italic;
+    font-size: 80%;
+    font-weight: normal;
+    font-style: italic;
 }
 .box .inner {
     padding: 10px;
@@ -99,8 +103,11 @@ h1, h1.title {
     background-color: #D3D0CD;
     cursor: pointer;
 }
+.box img, .box .description {
+    margin-top: 0.5em;
+}
 div.alt {
-	background-color: #CCC;
+    background-color: #CCC;
 }
 #header, #footer {
     width: 100%;
@@ -151,3 +158,53 @@ div.alt {
 #search_container form {
     display: inline;
 }
+.hide {
+    visibility: hidden;
+    display: none;
+}
+
+
+
+/**** Masonry CSS ****/
+
+.wrap {
+    background: #FFF;
+    border: 0px solid #456;
+    padding: 10px;
+	margin-bottom: 20px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.wrap:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.box {
+    margin: 5px;
+    padding: 5px;
+/*    background: #D8D5D2;*/
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+/*    font-size: 11px;*/
+    float: left;
+}
+
+.col1 { width: 80px; }
+.col2 { width: 180px; }
+.col3 { width: 280px; }
+.col4 { width: 380px; }
+.col5 { width: 480px; }
+
+.col1 img { max-width: 80px; }
+.col2 img { max-width: 180px; }
+.col3 img { max-width: 280px; }
+.col4 img { max-width: 380px; }
+.col5 img { max-width: 480px; }
+
