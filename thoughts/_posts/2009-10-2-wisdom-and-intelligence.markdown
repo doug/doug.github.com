@@ -1,0 +1,10 @@
+---
+layout: article
+title: Wisdom, Intelligence, and HCI
+author: Doug Fritz
+description: 'Something that I have often longed for is to fully understand the difference between wisdom and intelligence; what I mean is that if intelligence is a function of the rate at which we synthesize and can apply new experiences, and wisdom is the integration of that function over time, then research in understanding the synthesis of intelligence (how we integrate concepts and apply new experiences) is probably the most beneficial method for gleaning wisdom as a society.'
+---
+
+Something that I have often longed for is to fully understand the difference between wisdom and intelligence; what I mean is that if intelligence is a function of the rate at which we synthesize and can apply new experiences, and wisdom is the integration of that function over time, then research in understanding the synthesis of intelligence (how we integrate concepts and apply new experiences) is probably the most beneficial method for gleaning wisdom as a society. 
+
+To extend human capability we need technology to act as a prosthesis in the ever extending human mind. Long ago thought was bound to our own heads; we then moved to cognition through symbolic vocalization; followed by physical external symbols and writing; our journey now is on closing and tightening that feedback loop with our own minds while simultaneously expanding and easing the memetic passage of information throughout the system as a whole. I want to be a part of building the interfaces and frameworks that allow us to do exactly that. As an example, if wisdom, as Bertrand Russell alludes to, is bound to the balancing of the sensory/emotional reaction to information at a given moment in time and space with its emancipation by analogous data in a remote time or space, can just-in-time interfaces become wiser windows into the world by something as simple as structuring the presentation of information not on a basis of pure relevance of content, but combined with a value of its spatial or temporal disjointness from the given moment.

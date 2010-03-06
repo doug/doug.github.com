@@ -1,0 +1,33 @@
+---
+layout: grid
+title: Doug Fritz
+categories: [nternal]
+---
+<div id="items" class="wrap">
+	{% for post in site.posts %}
+		{% for cat in page.categories %}
+		{% if post.categories contains cat %}
+		<div class="item box col3" onclick="location.href='{{ post.url }}';">
+			<div class="inner">
+				<div>
+					<div class="title index"><a href="{{ post.url }}">{{ post.title }}</a></div>
+					<div class="pubdate">{{ post.date | date_to_string }}</div>
+					<div class="hide index">{{ post.author }}</div>
+					<div class="hide index">{{ post.categories }}</div>
+				</div>
+				{% if post.teaser %}
+				<div class="image">
+					<a href="{{ post.url }}"><img width="255px" src="{{ post.teaser }}"></a>
+				</div>
+				{% endif %}
+				{% if post.description %}
+				<div class="description">
+					{{ post.description }}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+		{% endif %}
+		{% endfor %}
+	{% endfor %}
+</div>

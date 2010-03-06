@@ -1,4 +1,4 @@
-Fluid Interfaces
+Doug Fritz
 =========
 
-This is the website for internal presentations of current and future fluid interfaces work.
+This is the website for doug fritz friends and projects
