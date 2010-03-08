@@ -1,16 +1,17 @@
 ---
 layout: article
 title: Ouroboros Ascii
-author: Doug
+author: Doug Fritz & Aaron Zinman
 description: 'Mug Design for the new MIT Media Lab building.  Code in the shape of one building to output ascii art in the shape of the other and vice versa.'
 ---
+
+{{ page.description }}
 
 {% highlight ruby %}
 	
 # MUG ONE ----------------------------------------
 
 #!/usr/bin/env ruby1.9
-
 puts "0EAkWCIMRI        IlQi      IUWEIkSCIUWEIkSK
 IkWEIkSKIkWEIkSM        MkWE      IkSMMkWEIkSKIk2A
 QlSo                JNUKIkUo      IkSi
@@ -22,9 +23,10 @@ IlyI                A0XIIMSM      MlEA
 x[0                   ]]*x[1                  ,5].
 to_i(                 2 ) }.                 join.
 scan(                 /.{54}/     ).         join(
-"\n"                  );puts      "tw        o bui
-ldings, one comm    on agenda. m   l world dominat
-ion!".strip.gsub(   /\s{2,}|\n/,   '') # 2009-2010
+"\n"                  );puts      " "         *3+"
+MIT MEDIA LAB; 2    5 YEARS; E    15 (1985); E14 (
+2010);".strip.      to_s.gsub(    /\s{2,}|\n/, '')
+
 
 # MUG ONE OUTPUT ---------------------------------
 
@@ -42,12 +44,12 @@ ion!".strip.gsub(   /\s{2,}|\n/,   '') # 2009-2010
 ..####....................####..................####..
 ..################....############..............####..
 ..################....############..............####..
-two buildings, one common agenda. ml world domination!
+   MIT MEDIA LAB; 25 YEARS; E15 (1985); E14 (2010);
+
 
 # MUG TWO ----------------------------------------
 
 #!/usr/bin/env ruby1.9
-
 puts "0EAk2IAMRI        INSC      IUWC
 IkQoElQqIkWCIkSo        IlQs      MkWI
 c1TI                J1WKIkUo      IkSi        IlSK
@@ -57,11 +59,11 @@ MNSI                    M0CA      ==".       gsub(
 )[0].unpack(            "b*"      )[0].      scan(
 /.{6}/).collect         {|x|      {"0"      =>".",
 "1"=>                   "#"}     [x[0]]*x[1,5].to_i(
-2)}.                   join.      scan(/.{54}/imx).
-join(                  "\n")                ;puts "
-two b                   uild                  ings
-, one common age    nda. ml worl              d do
-mination!".gsub(   /\s{2,}|\n/,'')           #2010
+2)}.                   join.     scan(/.{54}/).join(
+"\n");                 puts      " "*3 + "MIT MEDI
+A LAB                 ; 25 Y                 EARS
+; E15 (1985); E1     4 (2010);"             .gsub(
+/\s{2,}|\n/,'').     reverse               #2010
 
 # MUG TWO OUTPUT ---------------------------------
 
@@ -79,6 +81,6 @@ mination!".gsub(   /\s{2,}|\n/,'')           #2010
 ..####....................####......####........####..
 ..################....############....############....
 ..################....############....############....
-two buildings, one common agenda. ml world domination!
+   MIT MEDIA LAB; 25 YEARS; E15 (1985); E14 (2010);
 	
 {% endhighlight %}
