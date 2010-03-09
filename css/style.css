@@ -205,3 +205,11 @@ div.alt {
 .col4 img { max-width: 380px; }
 .col5 img { max-width: 480px; }
 
+.info {
+  position: absolute;
+  top: 30px;
+  display: block;
+  margin: auto;
+  padding: 3px 3px;
+  background: #FFF;
+}
