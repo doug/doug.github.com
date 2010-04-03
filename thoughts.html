@@ -1,12 +1,9 @@
 ---
 layout: grid
 title: Thoughts
-categories: [thoughts]
 ---
 <div id="items" class="wrap">
-	{% for post in site.posts %}
-		{% for cat in page.categories %}
-		{% if post.categories contains cat %}
+	{% for post in site.categories.thoughts %}
 		<div class="item box col3" onclick="location.href='{{ post.url }}';">
 			<div class="inner">
         		{% if post.teaser %}
@@ -31,7 +28,5 @@ categories: [thoughts]
 				{% endif %}
 			</div>
 		</div>
-		{% endif %}
-		{% endfor %}
 	{% endfor %}
 </div>

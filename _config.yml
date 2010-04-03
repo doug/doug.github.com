@@ -3,4 +3,4 @@ lsi:         false
 server:      true
 pygments:    true
 markdown:    rdiscount
-permalink:   pretty
+permalink:   none
