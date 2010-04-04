@@ -6,10 +6,10 @@ description: 'Speed a lot of time setting up various tool chains and libraries a
 ---
 
 ## Tools
-	* Homebrew
-	* Interpreted Languages - Python, Ruby (alts jruby, jpython, ruby1.9)
-	* JVM Languages - Clojure, Scala
-	* Mvim (alts Emacs, Textmate, Textwrangler)
-	* Eclipse (alts Netbeans, Intellij)
-	* Github (alts bitbucket, svn, bannanajour)
-	* zsh (alts bash, tcsh)
+  * Homebrew
+  * Interpreted Languages - Python, Ruby (alts jruby, jpython, ruby1.9)
+  * JVM Languages - Clojure, Scala
+  * Mvim (alts Emacs, Textmate, Textwrangler)
+  * Eclipse (alts Netbeans, Intellij)
+  * Github (alts bitbucket, svn, bannanajour)
+  * zsh (alts bash, tcsh)

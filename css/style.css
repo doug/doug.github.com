@@ -168,10 +168,10 @@ div.alt {
 .wrap {
     border: 0px solid #456;
     padding: 10px;
-	margin-bottom: 20px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+  margin-bottom: 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .wrap:after {
@@ -213,7 +213,7 @@ div.alt {
   padding: 3px 3px;
   background: #FFF;
   filter:alpha(opacity=90);
-	-moz-opacity:0.9;
-	-khtml-opacity: 0.9;
-	opacity: 0.9;
+  -moz-opacity:0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.9;
 }

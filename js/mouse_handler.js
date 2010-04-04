@@ -13,22 +13,22 @@ var mouseConverter = function(ev) {
 }
 
 var mouseHandlerByCase = function(cases) {
-	return function(ev) {
-		var propogate = true;
-		var handler = cases[mouseConverter(ev)];
-		if(handler === undefined) {
-	        handler = cases['default'];
-    		if(handler === undefined) { return; }
-		}
-	    propogate = handler(ev);
-		if(propogate === false) {
-		    dutils.stopPropagation(ev);
-		}
-	}
+  return function(ev) {
+    var propogate = true;
+    var handler = cases[mouseConverter(ev)];
+    if(handler === undefined) {
+          handler = cases['default'];
+        if(handler === undefined) { return; }
+    }
+      propogate = handler(ev);
+    if(propogate === false) {
+        dutils.stopPropagation(ev);
+    }
+  }
 }
 
 var wheelHandleMaker = function (handle) {
-		return function(event) {
+    return function(event) {
         var delta = 0;
         if (!event) /* For IE. */
                 event = window.event;
@@ -56,6 +56,6 @@ var wheelHandleMaker = function (handle) {
          */
         if (event.preventDefault)
                 event.preventDefault();
-	  event.returnValue = false;
+    event.returnValue = false;
   }
 }

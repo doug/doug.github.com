@@ -33,17 +33,17 @@ var keyConverter = function(ev) {
 }
 
 var keyHandlerByCase = function(cases) {
-	return function(ev) {
-		var propogate = true;
-		var handler = cases[keyConverter(ev)];
-		if(handler === undefined) {
-	        handler = cases['default'];
-    		if(handler === undefined) { return; }
-		}
-	    propogate = handler(ev);
-		if(propogate === false) {
-		    ev.preventDefault();
-		    dutils.stopPropagation();
-		}
-	}
+  return function(ev) {
+    var propogate = true;
+    var handler = cases[keyConverter(ev)];
+    if(handler === undefined) {
+          handler = cases['default'];
+        if(handler === undefined) { return; }
+    }
+      propogate = handler(ev);
+    if(propogate === false) {
+        ev.preventDefault();
+        dutils.stopPropagation();
+    }
+  }
 }

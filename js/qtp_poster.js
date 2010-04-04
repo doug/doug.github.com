@@ -47,8 +47,8 @@ Copyright © 2006-2007 Apple Computer, Inc., All Rights Reserved
 */ 
 
 if (typeof(QTP) == "undefined") { 
-	/** QTP is a namespace for QuickTime Player javascript objects. */
-	QTP = {}; 
+  /** QTP is a namespace for QuickTime Player javascript objects. */
+  QTP = {}; 
 }
 
 /**
@@ -56,36 +56,36 @@ if (typeof(QTP) == "undefined") {
  *   QTP.Movie, QTP.Controller, and QTP.UI:
  */
 {
-	var head = document.getElementsByTagName('head')[0];
-	var scripts = $A(document.getElementsByTagName('script'));
-	var baseURL;
-	scripts.each(function(script) {
-		var src = script.getAttribute('src');
-		if(typeof(src) == 'undefined')
-			return;
-			
-		var match = src.match(/(.*)qtp_poster.js/);
-		if(!match)
-			return;
-			
-		baseURL = src.match(/(.*)qtp_poster.js/)[1];
-		if(typeof(baseURL) != 'undefined')
-			throw($break);
-	});
-	
-	var include = function(url) {
-		var script = document.createElement('script');
-		script.setAttribute('language', 'javascript');
-		script.setAttribute('type', 'text/javascript');
-		script.setAttribute('src', url);
-		head.appendChild(script);
-	};
-	if(typeof(QTP.Movie) == "undefined")
-		include(baseURL + "qtp_movie.js");
-	if(typeof(QTP.Button) == "undefined")
-		include(baseURL + "qtp_ui.js");
-	if(typeof(QTP.MovieController) == "undefined")
-		include(baseURL + "qtp_controller.js");
+  var head = document.getElementsByTagName('head')[0];
+  var scripts = $A(document.getElementsByTagName('script'));
+  var baseURL;
+  scripts.each(function(script) {
+    var src = script.getAttribute('src');
+    if(typeof(src) == 'undefined')
+      return;
+      
+    var match = src.match(/(.*)qtp_poster.js/);
+    if(!match)
+      return;
+      
+    baseURL = src.match(/(.*)qtp_poster.js/)[1];
+    if(typeof(baseURL) != 'undefined')
+      throw($break);
+  });
+  
+  var include = function(url) {
+    var script = document.createElement('script');
+    script.setAttribute('language', 'javascript');
+    script.setAttribute('type', 'text/javascript');
+    script.setAttribute('src', url);
+    head.appendChild(script);
+  };
+  if(typeof(QTP.Movie) == "undefined")
+    include(baseURL + "qtp_movie.js");
+  if(typeof(QTP.Button) == "undefined")
+    include(baseURL + "qtp_ui.js");
+  if(typeof(QTP.MovieController) == "undefined")
+    include(baseURL + "qtp_controller.js");
 }
 
 /**
@@ -98,7 +98,7 @@ if (typeof(QTP) == "undefined") {
  */
 QTP.Poster = function(url) 
 { 
-	this.url = url;
+  this.url = url;
 };
 
 /**
@@ -162,12 +162,12 @@ QTP.Poster.prototype.className = 'QTP';
  * Change or add attributes to control the movie created by the poster object.
  */
 QTP.Poster.prototype.attributes = {
-		controller: 'false',
-		autoplay: 'true', 
-		bgcolor: 'black', 
-		scale: 'aspect',
-		postdomevents: 'true'
-	};
+    controller: 'false',
+    autoplay: 'true', 
+    bgcolor: 'black', 
+    scale: 'aspect',
+    postdomevents: 'true'
+  };
 
 /**
  * Caches whether the movie element is currently popped up.
@@ -190,71 +190,71 @@ QTP.Poster.prototype.attributes = {
  */
 QTP.Poster.instantiatePosters = function()
 {
-	if (navigator.platform.indexOf('iPhone') > -1) 
-		return;
+  if (navigator.platform.indexOf('iPhone') > -1) 
+    return;
 
-	// Check for prerequisites before continuing:		
-	if(typeof(QTP.Movie) == "undefined" || typeof(QTP.Button) == "undefined" || typeof(QTP.MovieController) == "undefined")
-	{	
-		setTimeout(QTP.Poster.instantiatePosters, 100);
-		return;
-	}
+  // Check for prerequisites before continuing:    
+  if(typeof(QTP.Movie) == "undefined" || typeof(QTP.Button) == "undefined" || typeof(QTP.MovieController) == "undefined")
+  {  
+    setTimeout(QTP.Poster.instantiatePosters, 100);
+    return;
+  }
 
 
-	var links = $A(document.getElementsByTagName('a'));
-	var posters = links.findAll(function(link){ return link.rel && link.rel == 'qtposter'; });
-	
-	posters.each(function(link){
-		var movieUrl = link.href;
-		var img = link.getElementsByTagName('img')[0];
-		
-		if (navigator.platform.indexOf('iPhone') > -1) 
-		{
-			var movie = new QTP.Movie({src:movieUrl});
-			link.parentNode.replaceChild(movie.element, link);
-			return;
-		}
-		
-		var poster = new QTP.Poster(movieUrl);		
-		var element = document.createElement('div');
-		
-		
-		if(Element.hasAttribute(img, 'width'))
-			poster.attributes.width = parseInt(img.getAttribute('width'));
-		if(Element.hasAttribute(img, 'height'))
-			poster.attributes.height = parseInt(img.getAttribute('height'));
+  var links = $A(document.getElementsByTagName('a'));
+  var posters = links.findAll(function(link){ return link.rel && link.rel == 'qtposter'; });
+  
+  posters.each(function(link){
+    var movieUrl = link.href;
+    var img = link.getElementsByTagName('img')[0];
+    
+    if (navigator.platform.indexOf('iPhone') > -1) 
+    {
+      var movie = new QTP.Movie({src:movieUrl});
+      link.parentNode.replaceChild(movie.element, link);
+      return;
+    }
+    
+    var poster = new QTP.Poster(movieUrl);    
+    var element = document.createElement('div');
+    
+    
+    if(Element.hasAttribute(img, 'width'))
+      poster.attributes.width = parseInt(img.getAttribute('width'));
+    if(Element.hasAttribute(img, 'height'))
+      poster.attributes.height = parseInt(img.getAttribute('height'));
 
-		if(!Element.hasAttribute(element, 'className'))
-			element.className = poster.className;
-		poster.element = element;
-		element.poster = poster;
-		element.style.position = 'relative';
+    if(!Element.hasAttribute(element, 'className'))
+      element.className = poster.className;
+    poster.element = element;
+    element.poster = poster;
+    element.style.position = 'relative';
 
-		var playContainer = element.appendChild(document.createElement('div'));
-		playContainer.className = 'playContainer';
-		
-		poster.play = playContainer.appendChild(document.createElement('span'));
-		poster.play.innerHTML = poster.clickText;
-		poster.play.className = 'playButton';
-		QTP.Poster.FixOperaOpacity(poster.play);
+    var playContainer = element.appendChild(document.createElement('div'));
+    playContainer.className = 'playContainer';
+    
+    poster.play = playContainer.appendChild(document.createElement('span'));
+    poster.play.innerHTML = poster.clickText;
+    poster.play.className = 'playButton';
+    QTP.Poster.FixOperaOpacity(poster.play);
 
-		element.appendChild(img);
-		poster.img = img;
-			
-		if(link.getAttribute('jscontroller')=='false')
-		{
-			poster.attributes.controller = 'true';
-		}
-		else
-		{
-			poster.controller = new QTP.MovieController(poster.controllerType);
-			poster.controller.setMovie(poster);
-			element.appendChild(poster.controller.element);
-		}
+    element.appendChild(img);
+    poster.img = img;
+      
+    if(link.getAttribute('jscontroller')=='false')
+    {
+      poster.attributes.controller = 'true';
+    }
+    else
+    {
+      poster.controller = new QTP.MovieController(poster.controllerType);
+      poster.controller.setMovie(poster);
+      element.appendChild(poster.controller.element);
+    }
 
-		element.onclick = poster.posterListener.bindAsEventListener(poster);
-		link.parentNode.replaceChild(element, link);
-	});
+    element.onclick = poster.posterListener.bindAsEventListener(poster);
+    link.parentNode.replaceChild(element, link);
+  });
 };
 
 /**
@@ -263,11 +263,11 @@ QTP.Poster.instantiatePosters = function()
  */
 QTP.Poster.FixIEController = function(element)
 {
-	if(navigator.appName != "Microsoft Internet Explorer")
-		return;
+  if(navigator.appName != "Microsoft Internet Explorer")
+    return;
 
-	if(!element.GetControllerVisible());
-		setTimeout( function() { element.SetControllerVisible(true); }, 100);
+  if(!element.GetControllerVisible());
+    setTimeout( function() { element.SetControllerVisible(true); }, 100);
 }
 
 /**
@@ -276,10 +276,10 @@ QTP.Poster.FixIEController = function(element)
  */
 QTP.Poster.FixOperaOpacity = function(element)
 {
-	if(navigator.appName != "Opera")
-		return;
+  if(navigator.appName != "Opera")
+    return;
 
-	element.style.opacity = "1.0";
+  element.style.opacity = "1.0";
 }
 
 
@@ -290,45 +290,45 @@ QTP.Poster.FixOperaOpacity = function(element)
  */
 QTP.Poster.prototype.posterListener = function(event)
 {
-	if(this.swapped)
-		return;
-	this.swapped = true;
-	
-	Event.stop(event);
+  if(this.swapped)
+    return;
+  this.swapped = true;
+  
+  Event.stop(event);
 
-	this.play.style.display = 'none';
-	this.img.style.opacity = 1.0;
+  this.play.style.display = 'none';
+  this.img.style.opacity = 1.0;
 
-	var intervalId = setInterval(function() {
-		var opacity = parseFloat(this.img.style.opacity);
-		opacity = Math.max(0.0, opacity - 0.2);
-		this.img.style.opacity = opacity;
-		this.img.style.filter = 'alpha(opacity='+(opacity*100)+')';
-	}.bind(this), 25);
-	
-	setTimeout(function() {
-		clearInterval(intervalId); 
-		
-		var attributes = this.attributes;
-		if(Element.hasAttribute(this.element, 'width'))
-			attributes.width = this.element.getAttribute('width');
-		if(Element.hasAttribute(this.element, 'height'))
-			attributes.height = this.element.getAttribute('height');
-			
-		attributes.src = this.url;
-		var movie = new QTP.Movie(attributes);
-		this.movie = movie;
-		
-		if(this.controller)
-			this.controller.setMovie(movie);
-		
-		this.element.replaceChild(movie.element, this.img);
-		
-		if(attributes.controller != 'false')
-			QTP.Poster.FixIEController(movie.element);
-	}.bind(this), 250);
-	
-	return true;
+  var intervalId = setInterval(function() {
+    var opacity = parseFloat(this.img.style.opacity);
+    opacity = Math.max(0.0, opacity - 0.2);
+    this.img.style.opacity = opacity;
+    this.img.style.filter = 'alpha(opacity='+(opacity*100)+')';
+  }.bind(this), 25);
+  
+  setTimeout(function() {
+    clearInterval(intervalId); 
+    
+    var attributes = this.attributes;
+    if(Element.hasAttribute(this.element, 'width'))
+      attributes.width = this.element.getAttribute('width');
+    if(Element.hasAttribute(this.element, 'height'))
+      attributes.height = this.element.getAttribute('height');
+      
+    attributes.src = this.url;
+    var movie = new QTP.Movie(attributes);
+    this.movie = movie;
+    
+    if(this.controller)
+      this.controller.setMovie(movie);
+    
+    this.element.replaceChild(movie.element, this.img);
+    
+    if(attributes.controller != 'false')
+      QTP.Poster.FixIEController(movie.element);
+  }.bind(this), 250);
+  
+  return true;
 };
 
 Event.observe(window, 'load', QTP.Poster.instantiatePosters);

@@ -9,9 +9,9 @@ description: 'Government 2.0 should take a note from programming languages (espe
 
 the speed limit for this road is 50 mph
 -> why
-	because that is a safe speed to drive at
-	-> why do you care if they are safe
-		#assumption we believe all human life is valuable
-	-> why is that a safe speed
-		#conditional truth because function of speed vs safety proved tru
+  because that is a safe speed to drive at
+  -> why do you care if they are safe
+    #assumption we believe all human life is valuable
+  -> why is that a safe speed
+    #conditional truth because function of speed vs safety proved tru
 

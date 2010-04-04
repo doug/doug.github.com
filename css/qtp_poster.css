@@ -1,6 +1,6 @@
 .QTP {
-	display: inline-block;
-	*display:inline; *zoom:1; *padding-bottom: 28px;
+  display: inline-block;
+  *display:inline; *zoom:1; *padding-bottom: 28px;
 }
 
 .QTP .playContainer {
@@ -29,92 +29,92 @@
 
 .QTP_Poster 
 {
-	background: transparent;
-	padding: 2px;
-	position: relative;
-	left: 0px;
-	height: 28px;
-	*position: absolute; *bottom: 0; *right: 0;
+  background: transparent;
+  padding: 2px;
+  position: relative;
+  left: 0px;
+  height: 28px;
+  *position: absolute; *bottom: 0; *right: 0;
 }
 .QTP_Poster button
 {
-	cursor: pointer;
-	cursor: hand;
-	border: 0px solid transparent;
-	background-color: transparent;	
-	padding: 0px;
-	margin: 0px;
+  cursor: pointer;
+  cursor: hand;
+  border: 0px solid transparent;
+  background-color: transparent;  
+  padding: 0px;
+  margin: 0px;
 }
 
 .QTP_Poster .Buttons
 {
-	margin:auto;
-	padding:0px;
-	display: inline-block;
-	position: absolute;
-	left: 0; bottom: 0;
+  margin:auto;
+  padding:0px;
+  display: inline-block;
+  position: absolute;
+  left: 0; bottom: 0;
 }
 
 /* Fix button focus rects in Firefox */
 .QTP_Poster button::-moz-focus-inner
 {
-	border: 0px solid transparent;
+  border: 0px solid transparent;
 }
 
 .QTP_Poster .Beginning, .QTP_Poster .Rewind, .QTP_Poster .Forward, .QTP_Poster .End, .QTP_Poster .Volume, .QTP_Poster .Time
 {
-	width:0;
-	height:0;
-	display: none;
+  width:0;
+  height:0;
+  display: none;
 }
 
 .QTP_Poster .Play, .QTP_Poster .Pause
 {
-	width:25px;
-	height:25px;
+  width:25px;
+  height:25px;
 }
 
 .QTP_Poster .Play { background-image: url(http://images.apple.com/library/quicktime/2.0/stylesheets/ProPlay.png); }
 .QTP_Poster .Pause { background-image: url(http://images.apple.com/library/quicktime/2.0/stylesheets/ProPause.png); }
 
 .QTP_Poster .Timeline {
-	position: absolute;
-	display: block;
-	left: 30px;
-	right: 0px;
-	top: 8px;
-	width: auto;
-	background-color: transparent;
-	padding: 0;
-	height: 16px;
+  position: absolute;
+  display: block;
+  left: 30px;
+  right: 0px;
+  top: 8px;
+  width: auto;
+  background-color: transparent;
+  padding: 0;
+  height: 16px;
 }
 .QTP_Poster .Timeline .Left
 {
-	position: absolute;
-	top: 7px;
-	left: 4px;
-	height: 9px;
-	background-color: black;
-	margin-right: 4px;
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  height: 9px;
+  background-color: black;
+  margin-right: 4px;
 }
 .QTP_Poster .Timeline .Knob 
 { 
-	background-image: url(http://images.apple.com/library/quicktime/2.0/stylesheets/ProKnob.png); 
-	position: relative;
-	width: 11px;
-	height: 16px;
-	margin: 0;
-	padding: 0px;
-	display: block;
+  background-image: url(http://images.apple.com/library/quicktime/2.0/stylesheets/ProKnob.png); 
+  position: relative;
+  width: 11px;
+  height: 16px;
+  margin: 0;
+  padding: 0px;
+  display: block;
 }
 .QTP_Poster .Timeline .Loaded
 {
-	position: absolute;
-	top: 7px;
-	height: 9px;
-	left: 0;
-	right: 4px;
-	margin-left: 4px; 
-	margin-right: 4px;
-	background: transparent url(http://images.apple.com/library/quicktime/2.0/stylesheets/ProTimeline.png) repeat-x bottom;
+  position: absolute;
+  top: 7px;
+  height: 9px;
+  left: 0;
+  right: 4px;
+  margin-left: 4px; 
+  margin-right: 4px;
+  background: transparent url(http://images.apple.com/library/quicktime/2.0/stylesheets/ProTimeline.png) repeat-x bottom;
 }
