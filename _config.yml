@@ -2,5 +2,4 @@ auto:        true
 lsi:         false
 server:      true
 pygments:    true
-markdown:    rdiscount
 permalink:   none
