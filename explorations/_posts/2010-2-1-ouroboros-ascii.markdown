@@ -7,6 +7,8 @@ description: 'Mug Design for the new MIT Media Lab building.  Code in the shape 
 
 {{ page.description }}
 
+![glasses]("/explorations/ouroboros-ascii/glasses720.jpg")
+
 {% highlight ruby %}
   
 # MUG ONE ----------------------------------------
