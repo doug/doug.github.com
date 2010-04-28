@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>test</title>
+	<meta name="author" content="Doug Fritz">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+	<!-- Date: 2010-04-28 -->
+</head>
+<body>
+    <div id="test"></div>
+	<script type="text/javascript">
+	    function ani(id) {
+	        $("#"+id).animate({"top": Math.random()*1000, "left": Math.random()*1000}, 1000, function() {
+	            ani(id);
+	        });
+	    }
+        (function($) {
+            for(var i=0;i<130;i++) {
+                console.log(i);
+                $("<img id='"+i+"' src='http://profile.ak.fbcdn.net/hprofile-ak-sf2p/hs624.ash1/27400_664534323_4415_q.jpg' />").css({"position":"absolute", "top": "10px", "left": "10px"}).appendTo("#test");
+                ani(i);
+            }
+        })(jQuery);
+    </script>
+</body>
+</html>
