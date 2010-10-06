@@ -7,10 +7,10 @@ description: 'Mug Design for the new MIT Media Lab building.  Code in the shape 
 
 {{ page.description }}
 
-![glasses]("/explorations/ouroboros-ascii/glasses720.jpg")
+<img src="/explorations/ouroboros-ascii/glasses720.jpg" />
 
 {% highlight ruby %}
-  
+
 # MUG ONE ----------------------------------------
 
 #!/usr/bin/env ruby1.9
@@ -84,5 +84,5 @@ A LAB                 ; 25 Y                 EARS
 ..################....############....############....
 ..################....############....############....
    MIT MEDIA LAB; 25 YEARS; E15 (1985); E14 (2010);
-  
+
 {% endhighlight %}
