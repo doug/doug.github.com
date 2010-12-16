@@ -6,9 +6,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
   <title>{{ page.title }}</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <link href="/atom.xml" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="/css/print.css" type="text/css" media="print"> 
+  <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
   <!--[if IE]>
     <link rel="stylesheet" href="/css/ie.css" type="text/css" media="screen, projection">
   <![endif]-->
@@ -22,10 +23,10 @@
               .     /  /  /  } /  /  /  / /  /  /  / /  /           *   .
           .  *     /  /  /  / /  /  /  / /  /  /  / /  /  /-----/
           +       /  /__/ _/ /  /__/  / /  /__/  / /  /___/  /      . +
-         .    `  /_______-   \_____ /   \_____ /   \_______ /    
+         .    `  /_______-   \_____ /   \_____ /   \_______ /
                   .         +            `       .                *
              `       *          .           +          *           `
-                    Hooray easteregg, somebody is looking at the code.      
+                    Hooray easteregg, somebody is looking at the code.
   -->
   <meta name="keywords" content="doug fritz art computer science clustering design robotics cool hack diy programming" />
   <meta name="description" content="Doug Fritz.  Art, Programming, Research.  My interests rest mainly on interaction between objects, people, and culture. Regarding those elements I enjoy the process of analyzing, simulating, exploring, and understanding their subtle inter-dependent lives." />
@@ -71,13 +72,13 @@
         <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
         <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
       </div>
-    <![endif]-->   
+    <![endif]-->
   </div>
   <div id="footer">
     <ul>
       {% if site.related_posts and 1==2 %}
       <li>
-        Similar to: 
+        Similar to:
       </li>
       {% for post in site.related_posts limit:5 %}
       {% if post.id != page.id %}
