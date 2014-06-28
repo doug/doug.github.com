@@ -1,7 +1,9 @@
 {
 	"baseurl": "http://dougfritz.com",
 	"languageCode": "en-us",
-	"title": "New Title",
-	"MetaDataFormat": "json"
+	"title": "Pile of Data",
+	"MetaDataFormat": "json",
+	"taxonimies": {
+		"tag": "tags"
+	}
 }
-
