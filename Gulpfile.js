@@ -4,13 +4,20 @@ var gulp = require( 'gulp' ),
 
 gulp.task( 'convert', function() {
     gulp.src( 'articles/*.md' )
-        .pipe( $.marked( {
-            gfm: true,
-            highlight: function( code ) {
+        .pipe( $.frontMatter( {
+            property: 'data',
+            remove: true
+        } ) )
+        .pipe( $.marked( { // convert the markdown
+            gfm: true, // use github flavor markdown
+            highlight: function( code ) { // highlight the code
                 return highlight.highlightAuto( code ).value;
             }
         } ) )
-        .pipe( $.rename( {
+        .pipe( $.wrap( { // wrap it in a template
+            src: 'templates/article.html'
+        } ) )
+        .pipe( $.rename( { // create a file with nice urls
             extname: '/index.html'
         } ) )
         .pipe( gulp.dest( 'build' ) );

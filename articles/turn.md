@@ -1,3 +1,8 @@
+---
+layout: post
+title: Turn title
+---
+
 # Turn
 
 this is an paragraph of stuff
