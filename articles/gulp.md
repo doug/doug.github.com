@@ -1,9 +1,8 @@
 ---
-layout: post
 title: Turn title
 ---
 
-# Turn
+# Gulp for static site generation
 
 this is an paragraph of stuff
 
