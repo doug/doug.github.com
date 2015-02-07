@@ -1,5 +1,5 @@
+---
 title: About
-date: 2015-02-07 13:08:55
 ---
 
 I try to governed my life by three elements; the longing for love, the quest for knowledge, and empathy for the failure of the world. I feel this is something true for almost everyone I admire. Love brings joy, denying our search for it as a driving force would be absurd. The search for knowledge, to me has always been encapsulated in the essence of a six year old with the power of recursion, able to ask why recursively ad infinitum, and I find that absolutely beautiful.
