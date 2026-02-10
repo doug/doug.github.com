@@ -1,3 +1,16 @@
+# Astro
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+
+# OS
 .DS_Store
-_site
+
+# Worktrees
 .worktrees
