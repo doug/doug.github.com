@@ -1,15 +1,173 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <main class="container">
+    <div class="content">
+      <h1 class="name">Doug Fritz</h1>
+      <p class="tagline">Principal Engineer at Google DeepMind, focused on AI for Science</p>
+      <p class="education">CMU · MIT</p>
+
+      <nav class="social">
+        <a href="https://github.com/doug" target="_blank" rel="noopener">GitHub</a>
+        <span class="separator">·</span>
+        <a href="https://www.linkedin.com/in/doug-fritz-aaa26b4/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="separator">·</span>
+        <a href="https://twitter.com/dohug" target="_blank" rel="noopener">X</a>
+      </nav>
+
+      <div class="email">
+        <button class="email-reveal" id="email-reveal">Contact</button>
+      </div>
+
+      <section class="publications">
+        <h2 class="section-title">Selected Work</h2>
+        <ul class="publication-list">
+          <li>
+            <a href="https://idl.cs.washington.edu/files/2018-TensorFlowGraph-VAST.pdf" target="_blank" rel="noopener">
+              Visualizing Dataflow Graphs in TensorFlow
+            </a>
+            <span class="pub-meta">· IEEE VAST 2018 · Best Paper</span>
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/2112.11446" target="_blank" rel="noopener">
+              Scaling Language Models (Gopher)
+            </a>
+            <span class="pub-meta">· DeepMind 2021</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl);
+    position: relative;
+  }
+
+  .content {
+    text-align: center;
+    max-width: 600px;
+    z-index: 1;
+  }
+
+  .name {
+    font-size: var(--font-size-3xl);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+  }
+
+  .tagline {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .education {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+  }
+
+  .social {
+    margin-bottom: var(--space-lg);
+  }
+
+  .social a {
+    font-size: var(--font-size-base);
+  }
+
+  .separator {
+    margin: 0 var(--space-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .email {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .email-reveal {
+    padding: var(--space-sm) var(--space-lg);
+    border: 1px solid var(--color-text);
+    border-radius: 4px;
+    font-size: var(--font-size-sm);
+    transition: all 0.2s ease;
+  }
+
+  .email-reveal:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .email-reveal.revealed {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .section-title {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-md);
+  }
+
+  .publication-list {
+    list-style: none;
+    text-align: left;
+  }
+
+  .publication-list li {
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-sm);
+  }
+
+  .pub-meta {
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 480px) {
+    .name {
+      font-size: var(--font-size-2xl);
+    }
+
+    .tagline {
+      font-size: var(--font-size-base);
+    }
+
+    .publication-list {
+      text-align: center;
+    }
+
+    .pub-meta {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  const button = document.getElementById('email-reveal');
+  if (button) {
+    button.addEventListener('click', () => {
+      const email = ['doug', 'dougfritz.com'].join('@');
+      button.textContent = email;
+      button.classList.add('revealed');
+
+      // Make it a clickable mailto link on second click
+      if (button.classList.contains('revealed')) {
+        button.onclick = () => {
+          window.location.href = `mailto:${email}`;
+        };
+      }
+    });
+  }
+</script>
