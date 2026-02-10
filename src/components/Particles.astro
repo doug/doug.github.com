@@ -1,0 +1,26 @@
+---
+// Particles canvas component
+---
+
+<canvas id="particles-canvas"></canvas>
+
+<style>
+  #particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  import { initParticles } from '../scripts/particles';
+
+  const canvas = document.getElementById('particles-canvas') as HTMLCanvasElement;
+  if (canvas) {
+    initParticles(canvas);
+  }
+</script>
