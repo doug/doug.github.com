@@ -1,8 +1,0 @@
----
-layout: article
-title: Genius
-author: Doug
----
-
-Minsky thoughts on genius are just outside the realm of the current knowledge but too far is the crazy.
-
