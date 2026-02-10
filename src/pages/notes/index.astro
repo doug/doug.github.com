@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const publishedNotes = await getCollection('notes', ({ data }) => data.published);
+const notes = publishedNotes.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Notes - Doug Fritz">
+  <main class="container">
+    <div class="content">
+      <a href="/" class="back">&larr; Back</a>
+      <h1>Notes</h1>
+
+      {notes.length === 0 ? (
+        <p class="empty">No notes yet.</p>
+      ) : (
+        <ul class="notes-list">
+          {notes.map((note) => (
+            <li>
+              <a href={`/notes/${note.slug}`}>{note.data.title}</a>
+              <time>{note.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .container {
+    min-height: 100vh;
+    padding: var(--space-2xl);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: var(--space-xl);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+  }
+
+  h1 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .empty {
+    color: var(--color-text-secondary);
+  }
+
+  .notes-list {
+    list-style: none;
+  }
+
+  .notes-list li {
+    margin-bottom: var(--space-md);
+  }
+
+  .notes-list a {
+    display: block;
+    font-size: var(--font-size-lg);
+  }
+
+  .notes-list time {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+</style>

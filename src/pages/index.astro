@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Particles from '../components/Particles.astro';
+import { getCollection } from 'astro:content';
+
+const publishedNotes = await getCollection('notes', ({ data }) => data.published);
+const hasNotes = publishedNotes.length > 0;
 ---
 
 <BaseLayout>
@@ -40,6 +44,12 @@ import Particles from '../components/Particles.astro';
           </li>
         </ul>
       </section>
+
+      {hasNotes && (
+        <nav class="notes-link">
+          <a href="/notes">Notes &rarr;</a>
+        </nav>
+      )}
     </div>
   </main>
 </BaseLayout>
@@ -134,6 +144,15 @@ import Particles from '../components/Particles.astro';
   }
 
   .pub-meta {
+    color: var(--color-text-secondary);
+  }
+
+  .notes-link {
+    margin-top: var(--space-2xl);
+  }
+
+  .notes-link a {
+    font-size: var(--font-size-sm);
     color: var(--color-text-secondary);
   }
 

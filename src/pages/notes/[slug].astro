@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes', ({ data }) => data.published);
+  return notes.map((note) => ({
+    params: { slug: note.slug },
+    props: { note },
+  }));
+}
+
+const { note } = Astro.props;
+const { Content } = await note.render();
+---
+
+<BaseLayout title={`${note.data.title} - Doug Fritz`}>
+  <main class="container">
+    <article class="content">
+      <a href="/notes" class="back">&larr; Notes</a>
+      <header>
+        <h1>{note.data.title}</h1>
+        <time>{note.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+      </header>
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .container {
+    min-height: 100vh;
+    padding: var(--space-2xl);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: var(--space-xl);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+  }
+
+  header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  h1 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  time {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .prose {
+    line-height: 1.7;
+  }
+
+  .prose :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  .prose :global(a) {
+    color: var(--color-accent);
+  }
+
+  .prose :global(code) {
+    background: rgba(0,0,0,0.05);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+</style>
