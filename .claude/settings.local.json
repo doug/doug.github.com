@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:dblp.org)",
+      "WebFetch(domain:patents.justia.com)",
+      "Bash(git check-ignore:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git worktree:*)",
+      "Bash(npm create:*)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(timeout 10 npm run dev:*)",
+      "Bash(git -C /Users/dougfritz/src/doug.github.com/.worktrees/personal-site-redesign status)",
+      "Bash(git -C /Users/dougfritz/src/doug.github.com/.worktrees/personal-site-redesign log --oneline -5)",
+      "Bash(git -C /Users/dougfritz/src/doug.github.com/.worktrees/personal-site-redesign add .gitignore astro.config.mjs package-lock.json package.json public/ src/ tsconfig.json)",
+      "Bash(git -C /Users/dougfritz/src/doug.github.com/.worktrees/personal-site-redesign rm --cached .nojekyll CNAME favicon.ico favicon.png)",
+      "Bash(git -C /Users/dougfritz/src/doug.github.com/.worktrees/personal-site-redesign commit -m \"$\\(cat <<''EOF''\nInitialize Astro project with TypeScript\n\n- Astro 4.x with strict TypeScript\n- Moved favicons and CNAME to public/\n- Updated .gitignore for Astro build artifacts\nEOF\n\\)\")",
+      "Bash(npm run build:*)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git -C /Users/dougfritz/src/doug.github.com/.worktrees/personal-site-redesign log --oneline -3)",
+      "Bash(git -C /Users/dougfritz/src/doug.github.com/.worktrees/personal-site-redesign add src/scripts/particles.ts)",
+      "Bash(git -C /Users/dougfritz/src/doug.github.com/.worktrees/personal-site-redesign commit -m \"$\\(cat <<''EOF''\nAdd boids particle system in TypeScript\n\n- Separation, alignment, cohesion behaviors\n- Mouse repulsion interaction\n- Occasional fuschia particle spawning with fade-out\n- Responsive particle count for mobile\n- Cleanup function for proper teardown\nEOF\n\\)\")",
+      "Bash(git log:*)",
+      "Bash(npm run dev:*)"
+    ]
+  }
+}

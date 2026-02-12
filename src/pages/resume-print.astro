@@ -1,0 +1,46 @@
+---
+import Resume from "../components/Resume.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doug Fritz - Resume</title>
+    <style>
+      /* Force print scaling and hiding non-essential elements */
+      @page {
+        size: letter;
+        margin: 0;
+      }
+
+      body {
+        background-color: white !important;
+        color: black !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* Hide the download button in the print version to avoid recursion */
+      :global(.download-link) {
+        display: none !important;
+      }
+
+      /* Ensure container fits well on page */
+      :global(.resume-section) {
+        padding: 2rem !important;
+        border: none !important;
+      }
+
+      :global(.resume-container) {
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <Resume />
+  </body>
+</html>

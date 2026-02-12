@@ -1,0 +1,358 @@
+---
+interface Props {}
+
+const education = [
+  {
+    school: "Massachusetts Institute of Technology",
+    degrees: [
+      "PhD in Media Arts and Sciences (Drop out)",
+      "Master of Science (2008-2010)",
+    ],
+  },
+  {
+    school: "Carnegie Mellon University",
+    degrees: [
+      "BS in Computer Science (2003-2007)",
+      "BFA in Fine Art (2003-2007)",
+    ],
+  },
+];
+
+const experience = [
+  {
+    role: "Principal Engineer, AI for Science",
+    company: "Google DeepMind",
+    location: "New England based",
+    period: "2025-Present",
+    description:
+      "Leading Engineering efforts for AI for Science. Accelerating scientific discovery through artificial intelligence.",
+    accomplishments: [
+      "Focus: Biology, Physics, and Materials Science",
+      "Scaling AI systems for scientific breakthrough",
+      "Bridge between research and engineering",
+    ],
+  },
+  {
+    role: "AIX: AI Experience Lead",
+    company: "Google DeepMind",
+    location: "London, UK",
+    period: "2022-2025",
+    description:
+      "Led the AIX team focused on prototyping and human-AI experiences. Creating prototypes for major AI demonstrations.",
+    accomplishments: [
+      "Prototypes: Project Astra, Music AI Sandbox",
+      "Tools: Vibe Coding in AI Studio Build",
+      "Gemini Launch: Demonstrations and interactive experiences",
+    ],
+  },
+  {
+    role: "Head of Visualization",
+    company: "DeepMind",
+    location: "London, UK",
+    period: "2017-2022",
+    description:
+      "Built and led the Visualization team. Created critical tooling for research, safety, and interpretability.",
+    accomplishments: [
+      "Science: AlphaFold 2 & 3 Visualization",
+      "Interpretability: In-context learning, sparse autoencoders",
+      "Papers: Gopher, Chinchilla, Flamingo, Gemini 1.0 reports",
+    ],
+  },
+  {
+    role: "Machine Intelligence Tooling",
+    company: "Google",
+    location: "Seattle, WA",
+    period: "2015-2017",
+    description:
+      "Prototyping and tooling for machine intelligence (TensorFlow, On-device ML).",
+    accomplishments: [
+      "TensorFlow Graph Visualizer (Best Paper at VAST)",
+      "TensorBoard early development and design",
+      "Colab Webcomponents integration",
+      "Facetracking annotation tools for dataset creation",
+      "DeepDream VR experiment",
+    ],
+  },
+  {
+    role: "Creative Engineer",
+    company: "Google Creative Lab",
+    location: "San Francisco, CA",
+    period: "2011-2015",
+    description:
+      "Google Data Arts Team. Developed experimental content, libraries, and websites to drive the web forward.",
+    accomplishments: [
+      "Chrome Experiments API design",
+      "Unnumbered Sparks (TED sculpture)",
+      "Just A Reflektor (Emmy award-winning interactive video)",
+      "This Exquisite Forest (Tate Modern)",
+      "WebGL Globe & Bookcase",
+    ],
+  },
+  {
+    role: "Research Assistant",
+    company: "MIT Media Lab",
+    location: "Cambridge, MA",
+    period: "2008-2011",
+    description:
+      "Fluid Interfaces Group under Pattie Maes. Focused on personal data, visualization, AI, and interfaces.",
+    accomplishments: [
+      "NIPS Co-authored paper on topic modeling",
+      "Created new technique for gaze tracking",
+      "Developed NLP visualization techniques",
+    ],
+  },
+];
+
+const skills = [
+  "Python (JAX, PyTorch, NumPy)",
+  "TypeScript, JavaScript, Node.js",
+  "Go, C++, ML Infrastructure",
+  "AI Systems & Tooling Architecture",
+  "Data Visualization & Interpretability",
+  "Human-AI Interaction (AIX)",
+  "React, Lit, Angular",
+  "Three.js, WebGL, Graphics",
+  "Product & Technical Leadership",
+  "Robotics & Physical Computing",
+  "Fine Arts (Oil Painting, Sculpture)",
+];
+
+const awards = [
+  "Emmy - Data Arts Team",
+  "FWA - Site of the Month/Day",
+  "IEEE VAST Best Paper",
+  "US Patents",
+  "University & College Honors",
+];
+---
+
+<section class="resume-section" id="resume">
+  <div class="resume-container">
+    <header class="resume-header">
+      <h2>Experience & Education</h2>
+      <a href="/resume.pdf" class="download-link" target="_blank"
+        >Download PDF</a
+      >
+    </header>
+
+    <div class="resume-grid">
+      <div class="main-col">
+        <h3 class="section-label">Experience</h3>
+        <div class="timeline-list">
+          {
+            experience.map((job) => (
+              <div class="job-item">
+                <div class="job-header">
+                  <h4 class="job-role">{job.role}</h4>
+                  <span class="job-company">{job.company}</span>
+                </div>
+                <div class="job-meta">
+                  <span class="job-location">{job.location}</span>
+                  <span class="job-period">{job.period}</span>
+                </div>
+                <p class="job-desc">{job.description}</p>
+                <ul class="job-achievements">
+                  {job.accomplishments.map((acc) => (
+                    <li>{acc}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="side-col">
+        <div class="resume-block">
+          <h3 class="section-label">Education</h3>
+          {
+            education.map((edu) => (
+              <div class="edu-item">
+                <h4 class="edu-school">{edu.school}</h4>
+                <ul class="edu-degrees">
+                  {edu.degrees.map((d) => (
+                    <li>{d}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="resume-block">
+          <h3 class="section-label">Skills</h3>
+          <div class="skills-cloud">
+            {skills.map((skill) => <span class="skill-tag">{skill}</span>)}
+          </div>
+        </div>
+
+        <div class="resume-block">
+          <h3 class="section-label">Awards</h3>
+          <ul class="simple-list">
+            {awards.map((a) => <li>{a}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .resume-section {
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--color-bg-card);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .resume-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--space-xl);
+    border-bottom: 2px solid var(--color-accent-purple);
+    padding-bottom: var(--space-sm);
+  }
+
+  .resume-header h2 {
+    font-size: 2rem;
+    color: var(--color-text-main);
+  }
+
+  .download-link {
+    font-family: var(--font-family-mono);
+    font-size: 0.9rem;
+    color: var(--color-accent-magenta);
+    border: 1px solid var(--color-accent-magenta);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+
+  .download-link:hover {
+    background: rgba(213, 63, 140, 0.05);
+  }
+
+  .resume-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  @media (max-width: 768px) {
+    .resume-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .section-label {
+    font-family: var(--font-family-mono);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 0.5rem;
+  }
+
+  /* Job Items */
+  .job-item {
+    margin-bottom: var(--space-xl);
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.25rem;
+  }
+
+  .job-role {
+    font-size: 1.25rem;
+    color: var(--color-text-main);
+  }
+
+  .job-company {
+    font-size: 1.1rem;
+    color: var(--color-accent-cyan);
+    font-weight: 600;
+  }
+
+  .job-meta {
+    font-family: var(--font-family-mono);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  .job-period {
+    margin-left: var(--space-md);
+  }
+
+  .job-desc {
+    color: var(--color-text-main);
+    margin-bottom: var(--space-sm);
+  }
+
+  .job-achievements {
+    list-style-type: disc;
+    padding-left: 1.2rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .job-achievements li {
+    margin-bottom: 0.25rem;
+  }
+
+  /* Side Col blocks */
+  .resume-block {
+    margin-bottom: var(--space-xl);
+  }
+
+  .edu-item {
+    margin-bottom: var(--space-lg);
+  }
+
+  .edu-school {
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin-bottom: 0.25rem;
+  }
+
+  .edu-degrees {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .skills-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--color-text-main);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-family: var(--font-family-mono);
+  }
+
+  .simple-list {
+    padding-left: 1.2rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .simple-list li {
+    margin-bottom: 0.25rem;
+  }
+</style>

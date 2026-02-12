@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && node scripts/generate-pdf.js",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -12,5 +12,9 @@
     "@astrojs/check": "^0.9.6",
     "astro": "^5.17.1",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "playwright": "^1.58.2",
+    "serve-handler": "^6.1.6"
   }
 }

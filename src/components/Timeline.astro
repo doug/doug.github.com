@@ -1,0 +1,765 @@
+---
+
+---
+
+<section class="timeline-container" id="timeline">
+  <div class="timeline-line-container">
+    <svg class="timeline-svg" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="var(--color-accent-green)"></stop>
+          <stop offset="50%" stop-color="var(--color-accent-cyan)"></stop>
+          <stop offset="100%" stop-color="var(--color-accent-magenta)"></stop>
+        </linearGradient>
+      </defs>
+      <!-- Multiple strands - organic filled paths -->
+      <path
+        class="timeline-strand"
+        id="strand-1"
+        fill="url(#gradient)"
+        stroke="none"
+        style="opacity: 0.6; mix-blend-mode: screen;"></path>
+      <path
+        class="timeline-strand"
+        id="strand-2"
+        fill="url(#gradient)"
+        stroke="none"
+        style="opacity: 0.3; mix-blend-mode: screen;"></path>
+      <path
+        class="timeline-strand"
+        id="strand-3"
+        fill="var(--color-accent-magenta)"
+        stroke="none"
+        style="opacity: 0.2; mix-blend-mode: screen;"></path>
+    </svg>
+  </div>
+
+  <div class="phases">
+    <!-- Phase 1: Divergence -->
+    <div class="phase phase-divergence" data-index="1">
+      <div class="phase-node"></div>
+      <div class="phase-content left">
+        <div class="phase-inner">
+          <span class="phase-meta">2003-2007 · Carnegie Mellon</span>
+          <h3>The Divergent Foundation</h3>
+          <div class="split-content">
+            <div class="art-side">
+              <h4>The Art</h4>
+              <p>BFA Fine Art</p>
+              <small>Oil Painting, Bronze Sculpture, Interactive Art</small>
+            </div>
+            <div class="science-side">
+              <h4>The Science</h4>
+              <p>BS Computer Science</p>
+              <small>Logic, Algorithms, Systems, Robots</small>
+            </div>
+          </div>
+          <p class="synthesis">
+            Synthesis: Code as a medium for visual expression and visualization.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2: Early Interfaces -->
+    <div class="phase phase-right" data-index="2">
+      <div class="phase-node"></div>
+      <div class="phase-content right">
+        <div class="phase-inner">
+          <span class="phase-meta"
+            >2006-2011 · IBM / Yahoo / Siri / MIT Media Lab</span
+          >
+          <h3>Early Interfaces & Data</h3>
+          <p>
+            From Data to Perception. Building tools to help people "see" complex
+            data.
+          </p>
+          <ul class="phase-tags">
+            <li>
+              <a href="https://processing.org/" target="_blank">Processing</a>
+            </li>
+            <li>Data Visualization</li>
+            <li>AI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3: The Canvas -->
+    <div class="phase phase-left" data-index="3">
+      <div class="phase-node"></div>
+      <div class="phase-content left">
+        <div class="phase-inner">
+          <span class="phase-meta">2011-2015 · Google Creative Lab</span>
+          <h3>The Canvas of the Web</h3>
+          <p>
+            High-Fidelity Expression. Pushing browser boundaries with WebGL.
+          </p>
+          <ul class="phase-tags">
+            <li>
+              <a href="https://experiments.withgoogle.com/" target="_blank"
+                >Chrome Experiments</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://developers.googleblog.com/en/visualizing-geographic-data-with-the-webgl-globe/"
+                target="_blank">WebGL Globe</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://experiments.withgoogle.com/just-a-reflektor"
+                target="_blank">Arcade Fire</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=npjTmG-TBHQ"
+                target="_blank">Unnumbered Sparks</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://experiments.withgoogle.com/this-exquisite-forest"
+                target="_blank">This Exquisite Forest</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 4: Infrastructure -->
+    <div class="phase phase-right" data-index="4">
+      <div class="phase-node"></div>
+      <div class="phase-content right">
+        <div class="phase-inner">
+          <span class="phase-meta">2015-2017 · Google Brain</span>
+          <h3>Infrastructure of Intelligence</h3>
+          <p>
+            Democratizing Machine Learning. Visual environments for data
+            scientists.
+          </p>
+          <ul class="phase-tags">
+            <li>
+              <a href="https://www.tensorflow.org/tensorboard" target="_blank"
+                >TensorBoard</a
+              >
+            </li>
+            <li>
+              <a href="https://colab.research.google.com/" target="_blank"
+                >Colab</a
+              >
+            </li>
+            <li>On-Device ML</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 5: Interpretability -->
+    <div class="phase phase-left" data-index="5">
+      <div class="phase-node"></div>
+      <div class="phase-content left">
+        <div class="phase-inner">
+          <span class="phase-meta">2017-2022 · DeepMind</span>
+          <h3>The Interpretability Frontier</h3>
+          <p>Visualizing the "Alien" Mind. Tools for Safety & Research.</p>
+          <ul class="phase-tags">
+            <li>Internal Tooling</li>
+            <li>
+              <a
+                href="https://deepmind.google/blog/capture-the-flag-the-emergence-of-complex-cooperative-agents/"
+                target="_blank">Cooperative Agents</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://deepmind.google/blog/alphastar-grandmaster-level-in-starcraft-ii-using-multi-agent-reinforcement-learning/"
+                target="_blank">AlphaStar</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://deepmind.google/technologies/alphafold/"
+                target="_blank">AlphaFold</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://deepmind.google/research/breakthroughs/gopher/"
+                target="_blank">Gopher & Gemini 1.0</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 6: AI Experience (New) -->
+    <div class="phase phase-right" data-index="6">
+      <div class="phase-node"></div>
+      <div class="phase-content right">
+        <div class="phase-inner">
+          <span class="phase-meta">2022-2025 · Google DeepMind</span>
+          <h3>AIX: AI Experience</h3>
+          <p>
+            Prototyping the Future. Creating human-AI experiences and demos.
+          </p>
+          <ul class="phase-tags">
+            <li>
+              <a
+                href="https://deepmind.google/gemini/project-astra/"
+                target="_blank">Project Astra</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://deepmind.google/blog/transforming-the-future-of-music-creation/"
+                target="_blank">Music AI Sandbox</a
+              >
+            </li>
+            <li>
+              <a href="https://aistudio.google.com/" target="_blank"
+                >AI Studio</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 7: AI for Science -->
+    <div class="phase phase-center" data-index="7">
+      <div class="phase-node large"></div>
+      <div class="phase-content center">
+        <div class="phase-inner">
+          <span class="phase-meta">2025-Present · Google DeepMind</span>
+          <h3>AI for Science</h3>
+          <p>
+            Accelerating scientific discovery. Biology, Physics, and Materials
+            Science.
+          </p>
+          <p class="final-statement">
+            Solving intelligence to advance science and benefit humanity.
+          </p>
+          <ul class="phase-tags">
+            <li>
+              <a href="https://deepmind.google/science/" target="_blank"
+                >Scientific Discovery</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-container {
+    padding: var(--space-2xl) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .timeline-line-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .timeline-svg {
+    width: 100%;
+    height: 100%;
+    /* opacity handled per strand */
+  }
+
+  .phases {
+    position: relative;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem; /* Reduced gap */
+    padding: 2rem;
+  }
+
+  .phase {
+    position: relative;
+    display: flex;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+  }
+
+  .phase.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .phase-node {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--color-bg-dark);
+    border: 2px solid var(--color-accent-green);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(72, 187, 120, 0.3);
+    z-index: 2;
+  }
+
+  .phase-node.large {
+    width: 30px;
+    height: 30px;
+    border-color: var(--color-accent-magenta);
+    box-shadow: 0 0 20px rgba(213, 63, 140, 0.3);
+  }
+
+  .phase-content {
+    background: var(--color-bg-card);
+    border-radius: 12px;
+    width: 45%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* For background image */
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .phase-inner {
+    position: relative;
+    z-index: 1;
+    padding: var(--space-lg);
+  }
+
+  .phase-content:hover {
+    background: var(--color-bg-card-hover);
+    border-color: var(--color-accent-green);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .phase-divergence {
+    justify-content: center;
+  }
+  .phase-divergence .phase-content {
+    width: 80%;
+    text-align: center;
+    border-color: var(--color-accent-gold);
+  }
+
+  .phase-left {
+    justify-content: flex-start;
+  }
+  .phase-left .phase-node {
+    left: 50%;
+  }
+  .phase-left .phase-content {
+    margin-right: auto;
+    text-align: right;
+    border-right: 3px solid var(--color-accent-green);
+  }
+
+  .phase-right {
+    justify-content: flex-end;
+  }
+  .phase-right .phase-node {
+    left: 50%;
+  }
+  .phase-right .phase-content {
+    margin-left: auto;
+    text-align: left;
+    border-left: 3px solid var(--color-accent-cyan);
+  }
+
+  .phase-center {
+    justify-content: center;
+  }
+  .phase-center .phase-content {
+    width: 60%;
+    text-align: center;
+    border: 1px solid var(--color-accent-magenta);
+    box-shadow: 0 0 30px rgba(213, 63, 140, 0.1);
+    margin-top: 15rem; /* Push card down so node (center) appears at top */
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-main);
+  }
+
+  .phase-meta {
+    font-family: var(--font-family-mono);
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+  }
+
+  .phase-tags {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-md);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: inherit;
+  }
+
+  .phase-tags li {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: var(--font-family-mono);
+    color: var(--color-text-muted);
+  }
+
+  .phase-tags a {
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-text-muted);
+  }
+
+  .phase-tags a:hover {
+    color: var(--color-accent-magenta);
+    border-bottom-color: var(--color-accent-magenta);
+  }
+
+  /* Divergence Split */
+  .split-content {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin: var(--space-md) 0;
+    text-align: left;
+  }
+
+  .art-side,
+  .science-side {
+    flex: 1;
+    padding: var(--space-md);
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+  }
+
+  .art-side h4 {
+    color: var(--color-accent-magenta);
+  }
+  .science-side h4 {
+    color: var(--color-accent-green);
+  }
+
+  .synthesis {
+    font-style: italic;
+    color: var(--color-accent-gold);
+    margin-top: var(--space-md);
+  }
+
+  @media (max-width: 768px) {
+    .phase {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    .phase-content {
+      width: 90%;
+      text-align: center;
+      margin: 0 !important;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .phase-node {
+      display: none;
+    }
+    .timeline-line-container {
+      opacity: 0.2;
+    }
+    .split-content {
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .phase-tags {
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  // Simple animation to show items as they scroll
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  document.querySelectorAll(".phase").forEach((phase) => {
+    observer.observe(phase);
+  });
+
+  // Dynamic Multi-Strand Animation
+  // Organic Tendril Animation
+  let time = 0;
+
+  // Simple pseudo-random noise (sufficient for visual effect)
+  function noise(x: number, t: number) {
+    return (
+      Math.sin(x * 0.1 + t) * 0.5 +
+      Math.sin(x * 0.3 - t * 1.5) * 0.25 +
+      Math.sin(x * 0.05 + t * 0.5) * 0.25
+    );
+  }
+
+  function getSpinePoints(phases: NodeListOf<Element>, containerRect: DOMRect) {
+    const points = [];
+    const centerX = containerRect.width / 2;
+
+    // Start at top center
+    points.push({ x: centerX, y: 0 });
+
+    phases.forEach((phase) => {
+      const node = phase.querySelector(".phase-node");
+      const target = node || phase;
+      const rect = target.getBoundingClientRect();
+      const x = rect.left + rect.width / 2 - containerRect.left;
+      const y = rect.top + rect.height / 2 - containerRect.top;
+      points.push({ x, y });
+    });
+
+    // End at bottom center
+    points.push({ x: centerX, y: containerRect.height });
+
+    return points;
+  }
+
+  // Catmull-Rom spline interpolation
+  function interpolateSpine(
+    points: { x: number; y: number }[],
+    resolution = 10,
+  ) {
+    const interpolated = [];
+    for (let i = 0; i < points.length - 1; i++) {
+      const p0 = points[Math.max(0, i - 1)];
+      const p1 = points[i];
+      const p2 = points[i + 1];
+      const p3 = points[Math.min(points.length - 1, i + 2)];
+
+      for (let t = 0; t < 1; t += 1 / resolution) {
+        const t2 = t * t;
+        const t3 = t2 * t;
+
+        const x =
+          0.5 *
+          (2 * p1.x +
+            (-p0.x + p2.x) * t +
+            (2 * p0.x - 5 * p1.x + 4 * p2.x - p3.x) * t2 +
+            (-p0.x + 3 * p1.x - 3 * p2.x + p3.x) * t3);
+        const y =
+          0.5 *
+          (2 * p1.y +
+            (-p0.y + p2.y) * t +
+            (2 * p0.y - 5 * p1.y + 4 * p2.y - p3.y) * t2 +
+            (-p0.y + 3 * p1.y - 3 * p2.y + p3.y) * t3);
+
+        // Calculate Derivative (Tangent) for smooth normals
+        const tx =
+          0.5 *
+          (-p0.x +
+            p2.x +
+            2 * (2 * p0.x - 5 * p1.x + 4 * p2.x - p3.x) * t +
+            3 * (-p0.x + 3 * p1.x - 3 * p2.x + p3.x) * t2);
+        const ty =
+          0.5 *
+          (-p0.y +
+            p2.y +
+            2 * (2 * p0.y - 5 * p1.y + 4 * p2.y - p3.y) * t +
+            3 * (-p0.y + 3 * p1.y - 3 * p2.y + p3.y) * t2);
+
+        interpolated.push({ x, y, tx, ty });
+      }
+    }
+    // Handle very last point tangent
+    const last = points[points.length - 1];
+    const prev = points[points.length - 2];
+    interpolated.push({
+      x: last.x,
+      y: last.y,
+      tx: last.x - prev.x,
+      ty: last.y - prev.y,
+    });
+    return interpolated;
+  }
+
+  function generateTendrilPath(
+    spine: { x: number; y: number; tx: number; ty: number }[],
+    time: number,
+    config: any,
+  ) {
+    const leftPoints: { x: number; y: number }[] = [];
+    const rightPoints: { x: number; y: number }[] = [];
+    const { baseWidth, noiseScale, speed, offset } = config;
+
+    const wiggleAmp = config.wiggleAmp || 15;
+    const wiggleFreq = config.wiggleFreq || 0.005;
+    const resolution = config.resolution || 15;
+
+    for (let i = 0; i < spine.length; i++) {
+      let pt = spine[i] as any;
+      let p = { x: pt.x, y: pt.y };
+
+      // Calculate anchor-based dampening factor
+      // This forces wiggle to 0 at every 'resolution' steps
+      const damp =
+        0.5 - 0.5 * Math.cos(2 * Math.PI * ((i % resolution) / resolution));
+
+      // Absolute Taper only for the very start and end of the entire timeline
+      let terminalTaper = 1;
+      if (i < resolution)
+        terminalTaper = Math.sin(((i / resolution) * Math.PI) / 2);
+      if (i > spine.length - resolution - 1)
+        terminalTaper = Math.sin(
+          (((spine.length - 1 - i) / resolution) * Math.PI) / 2,
+        );
+
+      // Apply organic wiggle using spatial distance 'd' for consistency
+      const spatialFreq = 0.005;
+      const wx =
+        noise(pt.d * spatialFreq, time * wiggleFreq + offset) *
+        wiggleAmp *
+        damp;
+      const wy =
+        noise(pt.d * spatialFreq + 100, time * wiggleFreq + offset) *
+        (wiggleAmp * 0.5) *
+        damp;
+
+      p.x += wx;
+      p.y += wy;
+
+      // Use exact pre-calculated tangents
+      const tx = pt.tx;
+      const ty = pt.ty;
+
+      // Normalize
+      const len = Math.sqrt(tx * tx + ty * ty) || 1;
+      const nx = -ty / len;
+      const ny = tx / len;
+
+      // Variable width - NO pinching at nodes (keep it simple and fluid)
+      const nVal = noise(pt.d * 0.01, time * speed + offset);
+      const w = Math.max(
+        0,
+        (baseWidth + nVal * baseWidth * 0.5) * terminalTaper,
+      );
+
+      leftPoints.push({ x: p.x + nx * w, y: p.y + ny * w });
+      rightPoints.push({ x: p.x - nx * w, y: p.y - ny * w });
+    }
+
+    // Construct Path
+    let d = `M ${leftPoints[0].x} ${leftPoints[0].y} `;
+
+    // Smooth line through left points
+    for (let i = 1; i < leftPoints.length; i++) {
+      d += `L ${leftPoints[i].x} ${leftPoints[i].y} `;
+    }
+
+    // Loop back through right points
+    for (let i = rightPoints.length - 1; i >= 0; i--) {
+      d += `L ${rightPoints[i].x} ${rightPoints[i].y} `;
+    }
+
+    d += "Z";
+    return d;
+  }
+
+  function updatePath() {
+    const container = document.querySelector(".timeline-container");
+    const phrases = document.querySelectorAll(".phase");
+
+    // Get tendril paths
+    const strands = [
+      document.getElementById("strand-1"),
+      document.getElementById("strand-2"),
+      document.getElementById("strand-3"),
+    ];
+
+    if (!container || phrases.length === 0 || !strands[0]) return;
+
+    const containerRect = container.getBoundingClientRect();
+
+    // 1. Get Spine
+    const rawSpine = getSpinePoints(phrases, containerRect);
+    // 2. Interpolate for smoothness
+    const resolution = 30; // Doubled resolution for extra fluidity
+    const spine = interpolateSpine(rawSpine, resolution);
+
+    // Add cumulative distance for spatial noise consistency
+    let dist = 0;
+    for (let i = 0; i < spine.length; i++) {
+      if (i > 0) {
+        const dx = spine[i].x - spine[i - 1].x;
+        const dy = spine[i].y - spine[i - 1].y;
+        dist += Math.sqrt(dx * dx + dy * dy);
+      }
+      (spine[i] as any).d = dist;
+    }
+
+    // 3. Generate each strand with slower, more "living" parameters
+    const configs = [
+      {
+        baseWidth: 6,
+        noiseScale: 0.1,
+        speed: 0.001,
+        offset: 0,
+        wiggleAmp: 20,
+        wiggleFreq: 0.008,
+        resolution,
+      }, // Main core
+      {
+        baseWidth: 10,
+        noiseScale: 0.05,
+        speed: 0.0008,
+        offset: 10,
+        wiggleAmp: 35,
+        wiggleFreq: 0.005,
+        resolution,
+      }, // Flowing shell
+      {
+        baseWidth: 4,
+        noiseScale: 0.2,
+        speed: 0.0015,
+        offset: 20,
+        wiggleAmp: 15,
+        wiggleFreq: 0.012,
+        resolution,
+      }, // Energetic inner
+    ];
+
+    strands.forEach((strand, i) => {
+      if (!strand) return;
+      const d = generateTendrilPath(spine, time, configs[i]);
+      strand.setAttribute("d", d);
+    });
+
+    time += 1; // Increment per frame
+    requestAnimationFrame(updatePath);
+  }
+
+  // Start animation loop
+  requestAnimationFrame(updatePath);
+</script>

@@ -9,7 +9,7 @@ const { title = 'Doug Fritz' } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,8 +17,78 @@ const { title = 'Doug Fritz' } = Astro.props;
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>{title}</title>
+
+    <script is:inline>
+      // Initialize theme to prevent flash
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    </script>
   </head>
   <body>
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">
+      <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
     <slot />
+
+    <script>
+      const toggle = document.getElementById('theme-toggle');
+      
+      toggle?.addEventListener('click', () => {
+        const element = document.documentElement;
+        const current = element.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        
+        element.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    </script>
+
+    <style>
+      #theme-toggle {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 100;
+        background: var(--color-bg-card);
+        border: 1px solid var(--color-border);
+        padding: 0.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        color: var(--color-text-main);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+      }
+
+      #theme-toggle:hover {
+        background: var(--color-bg-card-hover);
+        transform: rotate(15deg);
+        color: var(--color-accent-magenta);
+      }
+
+      .sun-icon, .moon-icon {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      /* Show/Hide logic */
+      [data-theme="light"] .moon-icon { display: none; }
+      [data-theme="dark"] .sun-icon { display: none; }
+    </style>
   </body>
 </html>

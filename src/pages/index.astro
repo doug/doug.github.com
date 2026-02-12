@@ -1,194 +1,413 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Particles from '../components/Particles.astro';
-import { getCollection } from 'astro:content';
-
-const publishedNotes = await getCollection('notes', ({ data }) => data.published);
-const hasNotes = publishedNotes.length > 0;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Timeline from "../components/Timeline.astro";
+import Resume from "../components/Resume.astro";
+import Particles from "../components/Particles.astro";
 ---
 
-<BaseLayout>
+<BaseLayout title="Doug Fritz | The Hybrid Interface">
   <Particles />
-  <main class="container">
-    <div class="content">
-      <h1 class="name">Doug Fritz</h1>
-      <p class="tagline">Principal Engineer at Google DeepMind, focused on AI for Science</p>
-      <p class="education">CMU · MIT</p>
 
-      <nav class="social">
-        <a href="https://github.com/doug" target="_blank" rel="noopener">GitHub</a>
-        <span class="separator">·</span>
-        <a href="https://www.linkedin.com/in/doug-fritz-aaa26b4/" target="_blank" rel="noopener">LinkedIn</a>
-        <span class="separator">·</span>
-        <a href="https://twitter.com/dohug" target="_blank" rel="noopener">X</a>
-      </nav>
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
 
-      <div class="email">
-        <button class="email-reveal" id="email-reveal">Contact</button>
+      <div class="hero-glass-card">
+        <header class="card-header">
+          <h1>Doug Fritz</h1>
+          <p class="role">Principal Engineer @ Google DeepMind</p>
+        </header>
+
+        <div class="card-body">
+          <p class="bio-tldr">
+            A lifelong builder seeking understanding through the art of making,
+            currently focused on engineering the frameworks that help us steer
+            AI toward humanity's greatest challenges in Science.
+          </p>
+
+          <div class="quick-stats">
+            <div class="stat">
+              <span class="stat-value">20+</span>
+              <span class="stat-label">Years Exp</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">CMU/MIT</span>
+              <span class="stat-label">Education</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">New England based</span>
+              <span class="stat-label">Based</span>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <a href="#timeline" class="btn-primary">View Journey</a>
+            <a href="#resume" class="btn-text">Full Resume</a>
+          </div>
+        </div>
       </div>
 
-      <section class="publications">
-        <h2 class="section-title">Selected Work</h2>
-        <ul class="publication-list">
-          <li>
-            <a href="https://idl.cs.washington.edu/files/2018-TensorFlowGraph-VAST.pdf" target="_blank" rel="noopener">
-              Visualizing Dataflow Graphs in TensorFlow
-            </a>
-            <span class="pub-meta">· IEEE VAST 2018 · Best Paper</span>
-          </li>
-          <li>
-            <a href="https://arxiv.org/abs/2112.11446" target="_blank" rel="noopener">
-              Scaling Language Models (Gopher)
-            </a>
-            <span class="pub-meta">· DeepMind 2021</span>
-          </li>
-        </ul>
-      </section>
+      <div class="scroll-indicator">
+        <span>The Elements</span>
+        <div class="arrow">↓</div>
+      </div>
+    </section>
 
-      {hasNotes && (
-        <nav class="notes-link">
-          <a href="/notes">Notes &rarr;</a>
-        </nav>
-      )}
-    </div>
+    <section class="philosophy" id="philosophy">
+      <div class="philosophy-content">
+        <h2 class="section-title">The Governing Elements</h2>
+        <div class="manifesto-grid">
+          <div class="manifesto-text">
+            <p class="lead">
+              I try to govern my life by three elements: <strong
+                >the longing for love</strong
+              >, <strong>the quest for knowledge</strong>, and <strong
+                >empathy for the failure of the world</strong
+              >.
+            </p>
+            <p>
+              For me, the search for knowledge has always been encapsulated in
+              the essence of a six-year-old with the power of recursion—able to
+              ask
+              <em>"why?"</em> recursively ad infinitum.
+            </p>
+            <p class="quote">
+              "I remain finding that recursive search for knowledge and inherent
+              fallibilism beautiful, even though my own four daughters asking it
+              is painful ad infinitum."
+            </p>
+          </div>
+          <div class="manifesto-visual">
+            <div class="recursion-loop">
+              <span>Why?</span>
+              <div class="loop-inner">
+                <span>Why?</span>
+                <div class="loop-inner">
+                  <span>Why?</span>
+                  <div class="loop-inner"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Timeline />
+
+    <Resume />
   </main>
 </BaseLayout>
 
 <style>
-  .container {
+  .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    padding: var(--space-xl);
+    align-items: center;
     position: relative;
+    overflow: hidden;
+    color: var(--color-text-main);
+    padding: var(--space-md);
   }
 
-  .content {
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--pattern-subtle-plaid);
+    background-size: var(--plaid-size) var(--plaid-size);
+    opacity: 1; /* Pure CSS pattern */
+    z-index: -1;
+  }
+
+  /* Dark mode adjustment for bg opacity */
+  :global([data-theme="dark"]) .hero-bg {
+    opacity: 0.3;
+  }
+
+  .hero-glass-card {
+    background: var(--color-bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    padding: var(--space-xl);
+    max-width: 500px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
     text-align: center;
-    max-width: 600px;
-    z-index: 1;
+    z-index: 10;
+    transform: translateY(0);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
-  .name {
-    font-size: var(--font-size-3xl);
-    font-weight: 600;
-    margin-bottom: var(--space-sm);
-    letter-spacing: -0.02em;
+  .hero-glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
-  .tagline {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-secondary);
+  .card-header {
+    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-md);
+  }
+
+  h1 {
+    font-size: 3rem;
     margin-bottom: var(--space-xs);
+    color: var(--color-text-main);
+    letter-spacing: -0.05em;
+    line-height: 1.1;
   }
 
-  .education {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+  .role {
+    font-family: var(--font-family-mono);
+    font-size: 0.9rem;
+    color: var(--color-accent-magenta);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .bio-tldr {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    line-height: 1.6;
+  }
+
+  .quick-stats {
+    display: flex;
+    justify-content: space-around;
     margin-bottom: var(--space-xl);
   }
 
-  .social {
-    margin-bottom: var(--space-lg);
+  .stat {
+    display: flex;
+    flex-direction: column;
   }
 
-  .social a {
-    font-size: var(--font-size-base);
+  .stat-value {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-accent-green);
   }
 
-  .separator {
-    margin: 0 var(--space-sm);
-    color: var(--color-text-secondary);
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
-  .email {
-    margin-bottom: var(--space-2xl);
+  .action-row {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    align-items: center;
   }
 
-  .email-reveal {
-    padding: var(--space-sm) var(--space-lg);
-    border: 1px solid var(--color-text);
-    border-radius: 4px;
-    font-size: var(--font-size-sm);
-    transition: all 0.2s ease;
+  .btn-primary {
+    background: var(--color-text-main);
+    color: var(--color-bg-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease;
   }
 
-  .email-reveal:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+  .btn-primary:hover {
+    transform: scale(1.05);
+    background: var(--color-accent-magenta);
+    color: white;
   }
 
-  .email-reveal.revealed {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
+  .btn-text {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .btn-text:hover {
+    color: var(--color-text-main);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-family-mono);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    animation: bounce 2s infinite;
+    cursor: pointer;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* Philosophy Section */
+  .philosophy {
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--color-bg-light);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .philosophy-content {
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .section-title {
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-family: var(--font-family-mono);
+    color: var(--color-accent-magenta);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.2em;
+    margin-bottom: var(--space-xl);
+    text-align: center;
+  }
+
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .manifesto-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--color-text-main);
+  }
+
+  .manifesto-text p {
     margin-bottom: var(--space-md);
   }
 
-  .publication-list {
-    list-style: none;
-    text-align: left;
+  .manifesto-text .lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-text-main);
   }
 
-  .publication-list li {
-    margin-bottom: var(--space-sm);
-    font-size: var(--font-size-sm);
+  .manifesto-text strong {
+    color: var(--color-accent-green);
+    font-weight: 600;
   }
 
-  .pub-meta {
-    color: var(--color-text-secondary);
+  .quote {
+    font-style: italic;
+    color: var(--color-text-muted);
+    border-left: 2px solid var(--color-accent-magenta);
+    padding-left: var(--space-md);
+    margin-top: var(--space-lg);
+    font-size: 1.1rem;
   }
 
-  .notes-link {
-    margin-top: var(--space-2xl);
+  .manifesto-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .notes-link a {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+  .recursion-loop {
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: var(--font-family-mono);
+    font-size: 0.8rem;
+    color: var(--color-accent-magenta);
+    animation: rotate 20s linear infinite;
   }
 
-  @media (max-width: 480px) {
-    .name {
-      font-size: var(--font-size-2xl);
+  .loop-inner {
+    width: 70%;
+    height: 70%;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+    animation: rotate-reverse 15s linear infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
     }
-
-    .tagline {
-      font-size: var(--font-size-base);
+    to {
+      transform: rotate(360deg);
     }
+  }
 
-    .publication-list {
+  @keyframes rotate-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .manifesto-grid {
+      grid-template-columns: 1fr;
       text-align: center;
     }
+    .manifesto-text .lead {
+      font-size: 1.25rem;
+    }
+    .quote {
+      border-left: none;
+      border-top: 2px solid var(--color-accent-magenta);
+      padding-left: 0;
+      padding-top: var(--space-md);
+    }
+  }
 
-    .pub-meta {
-      display: block;
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
     }
   }
 </style>
-
-<script>
-  const button = document.getElementById('email-reveal');
-  if (button) {
-    button.addEventListener('click', () => {
-      const email = ['doug', 'dougfritz.com'].join('@');
-      button.textContent = email;
-      button.classList.add('revealed');
-
-      // Make it a clickable mailto link on second click
-      if (button.classList.contains('revealed')) {
-        button.onclick = () => {
-          window.location.href = `mailto:${email}`;
-        };
-      }
-    });
-  }
-</script>
