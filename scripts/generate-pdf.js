@@ -1,9 +1,9 @@
-
 import { chromium } from 'playwright';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
 import handler from 'serve-handler';
+import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -59,9 +59,10 @@ async function generatePDF() {
 
         console.log(`PDF generated successfully at: ${pdfPath}`);
         
-        // Also copy to public so it's available in dev if needed (optional)
-        // const publicPath = path.resolve(__dirname, '../public/resume.pdf');
-        // fs.copyFileSync(pdfPath, publicPath);
+        // Also copy to public so it's available in dev if needed
+        const publicPath = path.resolve(__dirname, '../public/resume.pdf');
+        fs.copyFileSync(pdfPath, publicPath);
+        console.log(`PDF copied to: ${publicPath}`);
 
         await browser.close();
 
