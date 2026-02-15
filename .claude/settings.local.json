@@ -25,7 +25,10 @@
       "Bash(git -C /Users/dougfritz/src/doug.github.com/.worktrees/personal-site-redesign add src/scripts/particles.ts)",
       "Bash(git -C /Users/dougfritz/src/doug.github.com/.worktrees/personal-site-redesign commit -m \"$\\(cat <<''EOF''\nAdd boids particle system in TypeScript\n\n- Separation, alignment, cohesion behaviors\n- Mouse repulsion interaction\n- Occasional fuschia particle spawning with fade-out\n- Responsive particle count for mobile\n- Cleanup function for proper teardown\nEOF\n\\)\")",
       "Bash(git log:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(identify:*)",
+      "Bash(convert:*)",
+      "Bash(magick:*)"
     ]
   }
 }

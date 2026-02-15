@@ -14,6 +14,7 @@ import Particles from "../components/Particles.astro";
 
       <div class="hero-glass-card">
         <header class="card-header">
+          <img src="/doug-fritz.jpg" alt="Doug Fritz" class="profile-photo" />
           <h1>Doug Fritz</h1>
           <p class="role">Principal Engineer @ Google DeepMind</p>
         </header>
@@ -48,48 +49,8 @@ import Particles from "../components/Particles.astro";
       </div>
 
       <div class="scroll-indicator">
-        <span>The Elements</span>
+        <span>Journey</span>
         <div class="arrow">↓</div>
-      </div>
-    </section>
-
-    <section class="philosophy" id="philosophy">
-      <div class="philosophy-content">
-        <h2 class="section-title">The Governing Elements</h2>
-        <div class="manifesto-grid">
-          <div class="manifesto-text">
-            <p class="lead">
-              I try to govern my life by three elements: <strong
-                >the longing for love</strong
-              >, <strong>the quest for knowledge</strong>, and <strong
-                >empathy for the failure of the world</strong
-              >.
-            </p>
-            <p>
-              For me, the search for knowledge has always been encapsulated in
-              the essence of a six-year-old with the power of recursion—able to
-              ask
-              <em>"why?"</em> recursively ad infinitum.
-            </p>
-            <p class="quote">
-              "I remain finding that recursive search for knowledge and inherent
-              fallibilism beautiful, even though my own four daughters asking it
-              is painful ad infinitum."
-            </p>
-          </div>
-          <div class="manifesto-visual">
-            <div class="recursion-loop">
-              <span>Why?</span>
-              <div class="loop-inner">
-                <span>Why?</span>
-                <div class="loop-inner">
-                  <span>Why?</span>
-                  <div class="loop-inner"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -160,8 +121,18 @@ import Particles from "../components/Particles.astro";
     padding-bottom: var(--space-md);
   }
 
+  .profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: var(--space-md);
+    border: 3px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+  }
+
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: var(--space-xs);
     color: var(--color-text-main);
     letter-spacing: -0.05em;
@@ -276,138 +247,14 @@ import Particles from "../components/Particles.astro";
     }
   }
 
-  /* Philosophy Section */
-  .philosophy {
-    padding: var(--space-2xl) var(--space-md);
-    background: var(--color-bg-light);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .philosophy-content {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .section-title {
-    font-size: 0.9rem;
-    font-family: var(--font-family-mono);
-    color: var(--color-accent-magenta);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin-bottom: var(--space-xl);
-    text-align: center;
-  }
-
-  .manifesto-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
-    align-items: center;
-  }
-
-  .manifesto-text {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    color: var(--color-text-main);
-  }
-
-  .manifesto-text p {
-    margin-bottom: var(--space-md);
-  }
-
-  .manifesto-text .lead {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--color-text-main);
-  }
-
-  .manifesto-text strong {
-    color: var(--color-accent-green);
-    font-weight: 600;
-  }
-
-  .quote {
-    font-style: italic;
-    color: var(--color-text-muted);
-    border-left: 2px solid var(--color-accent-magenta);
-    padding-left: var(--space-md);
-    margin-top: var(--space-lg);
-    font-size: 1.1rem;
-  }
-
-  .manifesto-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .recursion-loop {
-    width: 200px;
-    height: 200px;
-    border: 1px solid var(--color-border);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    font-family: var(--font-family-mono);
-    font-size: 0.8rem;
-    color: var(--color-accent-magenta);
-    animation: rotate 20s linear infinite;
-  }
-
-  .loop-inner {
-    width: 70%;
-    height: 70%;
-    border: 1px solid var(--color-border);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.6;
-    animation: rotate-reverse 15s linear infinite;
-  }
-
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes rotate-reverse {
-    from {
-      transform: rotate(360deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .manifesto-grid {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-    .manifesto-text .lead {
-      font-size: 1.25rem;
-    }
-    .quote {
-      border-left: none;
-      border-top: 2px solid var(--color-accent-magenta);
-      padding-left: 0;
-      padding-top: var(--space-md);
-    }
-  }
-
   @media (max-width: 768px) {
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
+    }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
     }
   }
 </style>
